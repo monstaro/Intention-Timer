@@ -1,0 +1,34 @@
+body,
+html {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #46424D;
+    color: white;
+    padding: 2em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.title {
+    margin: 0;
+}
+
+.site-left-main {
+    background-color: #2B2733;
+    border-right: 1px solid grey;
+    color: white;
+    width: 70%;
+}
+
+.site-left-box {
+    background-color: #46424D;
+}
+
+.site-right-main {
+    background-color: #2B2733;
+    border-left: 1px solid grey;
+    width: 30%;
+}
