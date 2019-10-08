@@ -1,4 +1,4 @@
-body,
+/* body,
 html {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -12,9 +12,11 @@ header {
     text-align: center;
     text-transform: uppercase;
 }
+
 input {
   color: white;
 }
+
 h1 {
   background-color: #46424D;
 }
@@ -115,4 +117,187 @@ h3 {
     background-color: #2B2733;
     width: 28%;
     display: inline-block;
+} */
+
+body,
+html {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    color: white;
+}
+
+header {
+    background-color: #46424D;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.site-left-main {
+    background-color: #2B2733;
+    border-right: 1px solid grey;
+    color: white;
+    width: 70%;
+    display: inline-block;
+    height: auto;
+}
+
+.left-background {
+    height: 30vh;
+}
+
+.new-activity {
+    margin-left: 20px;
+}
+
+.site-left-box {
+    height: 100%;
+    background-color: #46424D;
+    margin: 20px;
+    padding: 70px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px -5px #000000;
+}
+
+.site-left-form {
+    background-color: #46424D;
+}
+
+.study-button {
+    background-image: url(assets/study.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 30%;
+    background-position-y: 0.2em;
+}
+
+.meditate-button {
+    background-image: url(assets/meditate.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 30%;
+    background-position-y: 0.2em;
+}
+
+.exercise-button {
+    background-image: url(assets/exercise.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 30%;
+    background-position-y: 0.2em;
+}
+
+.top-buttons {
+    height: 5em;
+    width: 10em;
+    color: white;
+    background-color: #46424D;
+    padding: 30px;
+    border-radius: 2px;
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3em;
+}
+
+.question {
+    display: block;
+    background-color: #46424D;
+    border: none;
+    border-bottom: 1px solid white;
+    width: 100%;
+    padding-bottom: 3em;
+    margin-bottom: 2em;
+}
+
+.minutes-seconds-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.minutes-column {
+    display: inline-block;
+}
+
+.minute {
+    display: block;
+    background-color: #46424D;
+    border: none;
+    border-bottom: 1px solid white;
+    padding-bottom: 3em;
+    margin-bottom: 2em;
+    width: 30em;
+}
+
+.seconds-column {
+    display: inline-block;
+}
+
+.seconds {
+    display: block;
+    background-color: #46424D;
+    border: none;
+    border-bottom: 1px solid white;
+    padding-bottom: 3em;
+    margin-bottom: 2em;
+    width: 30em;
+}
+
+.start-button {
+    background-color: #EEEEEE;
+    color: #46424D;
+    font-size: 1em;
+    padding: 8px 30px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: flex;
+    float: right;
+}
+
+.site-right-main {
+    background-color: #2B2733;
+    float: right;
+    width: 29.9%;
+    height: 105.4vh;
+}
+
+.past-activities {
+    margin: 10px;
+}
+
+.site-right-activities {
+    margin: 10px;
+}
+
+.activity-box {
+    background-color: #46424D;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px -5px #000000;
+}
+
+.activity-name {
+    font-weight: 700;
+}
+
+.activity-time {
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.activity-description {
+    font-weight: 300;
+}
+
+.color-tab {
+    height: 20%;
+    width: 2%;
+    background: orange;
+    border-radius: 10px;
 }
