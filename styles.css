@@ -172,6 +172,14 @@ header {
     background-position-y: 0.4em;
 }
 
+.study-button-active {
+    background-image: url(assets/study-active.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 20%;
+    background-position-y: 0.4em;
+}
+
 .meditate-button {
     background-image: url(assets/meditate.svg);
     background-repeat: no-repeat;
@@ -180,8 +188,24 @@ header {
     background-position-y: 0.4em;
 }
 
+.meditate-button-active {
+    background-image: url(assets/meditate-active.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 20%;
+    background-position-y: 0.4em;
+}
+
 .exercise-button {
     background-image: url(assets/exercise.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 20%;
+    background-position-y: 0.4em;
+}
+
+.exercise-button-active {
+    background-image: url(assets/exercise-active.svg);
     background-repeat: no-repeat;
     background-position: top;
     background-size: 20%;
