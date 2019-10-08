@@ -19,17 +19,21 @@
         <section class="site-left-box">
             <h3>Select A Category</h3>
             <div class="category-buttons">
-              <input class="study-button" type="button" src="assets/study.svg" value="Study">
-              <input class="meditate-button" type="button" src="assets/meditate.svg" value="Meditate">
-              <input class="exercise-button" type="button" src="assets/exercise.svg" value="Exercise">
+              <input class="study-button" type="button" src="/assets/study.svg" value="Study">
+              <input class="meditate-button" type="button" src="/assets/meditate.svg" value="Meditate">
+              <input class="exercise-button" type="button" src="/assets/exercise.svg" value="Exercise">
             </div>
             <form class="site-left-form">
-                <label for="What would you like to accomplish during this time?"></label>
-                <input type="text">
-                <label for="Minutes"></label>
-                <input type="text">
-                <label for="Seconds"></label>
-                <input type="text">
+              <div class="what-question">
+                <label for="question">What would you like to accomplish during this time?</label>
+                <input class="question" type="text">
+              </div>
+              <div class="minutes-seconds">
+                <label for="minutes">Minutes</label>
+                <input class="minutes" type="text">
+                <label for="seconds">Seconds</label>
+                <input class="seconds" type="text">
+              </div>
                 <input type="button" value="START ACTIVITY">
             </form>
         </section>

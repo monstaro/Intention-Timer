@@ -21,7 +21,9 @@ h1 {
 .title {
     margin: 0;
 }
-
+.what-question, .minutes-seconds {
+  display: block;
+}
 .study-button, .meditate-button, .exercise-button {
   border: white 3px solid;
   width: 150px;
@@ -37,6 +39,7 @@ h1 {
     border-right: 1px solid grey;
     color: white;
     width: 70%;
+    display: inline-block;
 }
 
 .site-left-box {
@@ -46,6 +49,6 @@ h1 {
 
 .site-right-main {
     background-color: #2B2733;
-    border-left: 1px solid grey;
-    width: 30%;
+    width: 28%;
+    display: inline-block;
 }
