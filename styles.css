@@ -168,33 +168,35 @@ header {
     background-image: url(assets/study.svg);
     background-repeat: no-repeat;
     background-position: top;
-    background-size: 30%;
-    background-position-y: 0.2em;
+    background-size: 20%;
+    background-position-y: 0.4em;
 }
 
 .meditate-button {
     background-image: url(assets/meditate.svg);
     background-repeat: no-repeat;
     background-position: top;
-    background-size: 30%;
-    background-position-y: 0.2em;
+    background-size: 20%;
+    background-position-y: 0.4em;
 }
 
 .exercise-button {
     background-image: url(assets/exercise.svg);
     background-repeat: no-repeat;
     background-position: top;
-    background-size: 30%;
-    background-position-y: 0.2em;
+    background-size: 20%;
+    background-position-y: 0.4em;
 }
 
 .top-buttons {
-    height: 5em;
+    height: 4em;
     width: 10em;
     color: white;
     background-color: #46424D;
-    padding: 30px;
+    padding: 20px;
     border-radius: 2px;
+    font-size: 1.1em;
+    line-height: 4em;
 }
 
 .category-buttons {
@@ -209,8 +211,8 @@ header {
     border: none;
     border-bottom: 1px solid white;
     width: 100%;
-    padding-bottom: 3em;
     margin-bottom: 2em;
+    font-size: 3em;
 }
 
 .minutes-seconds-row {
@@ -227,9 +229,9 @@ header {
     background-color: #46424D;
     border: none;
     border-bottom: 1px solid white;
-    padding-bottom: 3em;
-    margin-bottom: 2em;
-    width: 30em;
+    margin-bottom: 0.5em;
+    font-size: 3em;
+    width: 60%;
 }
 
 .seconds-column {
@@ -241,9 +243,9 @@ header {
     background-color: #46424D;
     border: none;
     border-bottom: 1px solid white;
-    padding-bottom: 3em;
-    margin-bottom: 2em;
-    width: 30em;
+    margin-bottom: 0.5em;
+    font-size: 3em;
+    width: 60%;
 }
 
 .start-button {
@@ -275,11 +277,15 @@ header {
 .activity-box {
     background-color: #46424D;
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
     margin: 10px;
     padding: 10px;
     box-shadow: 5px 5px 10px -5px #000000;
+}
+
+.activity-box-top {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
 }
 
 .activity-name {
@@ -296,8 +302,13 @@ header {
 }
 
 .color-tab {
-    height: 20%;
+    height: 2em;
     width: 2%;
     background: orange;
+    color: orange;
     border-radius: 10px;
+}
+
+input[type="button"]:hover {
+    cursor: pointer;
 }
