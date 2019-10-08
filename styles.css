@@ -1,11 +1,8 @@
-* {
-  background-color: #2B2733;
-}
-
 body,
 html {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    color: white;
 }
 
 header {
@@ -15,9 +12,17 @@ header {
     text-align: center;
     text-transform: uppercase;
 }
-
+input {
+  color: white;
+}
 h1 {
   background-color: #46424D;
+}
+h2 {
+  margin-left: 15px;
+}
+h3 {
+  padding-left: 5em;
 }
 
 .title {
@@ -35,23 +40,77 @@ h1 {
 .site-left-box {
     height: 100%;
     background-color: #46424D;
+    margin: 20px;
+    padding: 20px;
+}
+.site-left-form {
+  background-color: #46424D;
 }
 
 .category-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.study-button {
+  background-image: url(assets/study.svg);
+  background-size: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.meditate-button{
+  background-image: url(assets/meditate.svg);
+  background-size: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.exercise-button{
+  background-image: url(assets/exercise.svg);
+  background-size: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .study-button, .meditate-button, .exercise-button {
   border: white 3px solid;
-  width: 150px;
-  height: 75px;
+  background-color: #46424D;
+  width: 15em;
+  height: 7em;
+  padding-top: 25px;
 }
 
-.what-question, .minutes-seconds {
+.what-question, .minutes-column, .seconds-column {
+  display: inline-block;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+}
+.question {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: white;
+  width: 100%;
+  background-color: #46424D;
+  margin-top: 30px;
+}
+.minutes, .seconds {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: white;
+  display: block;
+  background-color: #46424D;
+  margin-top: 30px;
+  width: 100%;
+}
+.start-button {
   display: block;
 }
-
 .site-right-main {
     background-color: #2B2733;
     width: 28%;
