@@ -1,3 +1,6 @@
+* {
+  background-color: #2B2733;
+}
 body,
 html {
     font-family: 'Montserrat', sans-serif;
@@ -7,13 +10,26 @@ html {
 header {
     background-color: #46424D;
     color: white;
-    padding: 2em;
+    padding: 15px;
     text-align: center;
     text-transform: uppercase;
+}
+h1 {
+  background-color: #46424D;
 }
 
 .title {
     margin: 0;
+}
+
+.study-button, .meditate-button, .exercise-button {
+  border: white 3px solid;
+  width: 150px;
+  height: 75px;
+}
+.category-buttons {
+  display: flex;
+  justify-content: space-around;
 }
 
 .site-left-main {
@@ -24,6 +40,7 @@ header {
 }
 
 .site-left-box {
+    height: 100%;
     background-color: #46424D;
 }
 
