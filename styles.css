@@ -48,63 +48,55 @@ header {
     background-color: #46424D;
 }
 
-.study-button {
-    background-image: url(assets/study.svg);
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 20%;
-    background-position-y: 0.4em;
-}
-
-.study-button-active {
-    background-image: url(assets/study-active.svg);
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 20%;
-    background-position-y: 0.4em;
-}
-
-.meditate-button {
-    background-image: url(assets/meditate.svg);
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 20%;
-    background-position-y: 0.4em;
-}
-
-.meditate-button-active {
-    background-image: url(assets/meditate-active.svg);
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 20%;
-    background-position-y: 0.4em;
-}
-
-.exercise-button {
-    background-image: url(assets/exercise.svg);
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 20%;
-    background-position-y: 0.4em;
-}
-
+.study-button,
+.study-button-active,
+.meditate-button,
+.meditate-button-active,
+.exercise-button,
 .exercise-button-active {
-    background-image: url(assets/exercise-active.svg);
     background-repeat: no-repeat;
     background-position: top;
     background-size: 20%;
     background-position-y: 0.4em;
-}
-
-.top-buttons {
     height: 4em;
     width: 10em;
     color: white;
     background-color: #46424D;
     padding: 20px;
+    border: white 2px solid;
     border-radius: 2px;
     font-size: 1.1em;
     line-height: 4em;
+}
+
+.study-button {
+    background-image: url(assets/study.svg);
+}
+
+.study-button-active {
+    background-image: url(assets/study-active.svg);
+    color: #B3FD78;
+    border: #B3FD78 2px solid;
+}
+
+.meditate-button {
+    background-image: url(assets/meditate.svg);
+}
+
+.meditate-button-active {
+    background-image: url(assets/meditate-active.svg);
+    color: #C278FD;
+    border: #C278FD 2px solid;
+}
+
+.exercise-button {
+    background-image: url(assets/exercise.svg);
+}
+
+.exercise-button-active {
+    background-image: url(assets/exercise-active.svg);
+    color: #FD8087;
+    border: #FD8087 2px solid;
 }
 
 .category-buttons {
