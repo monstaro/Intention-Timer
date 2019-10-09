@@ -43,7 +43,38 @@
                 </form>
             </section>
         </main>
-
+      <main class="site-left-main">
+          <h2 class="new-activity">New Activity</h2>
+          <section class="site-left-box">
+              <h3>Select A Category:</h3>
+              <form class="site-left-form">
+                  <div class="category-buttons">
+                      <input class="study-button top-buttons" type="button" src="assets/study.svg" value="Study">
+                      <input class="meditate-button top-buttons" type="button" src="assets/meditate.svg" value="Meditate">
+                      <input class="exercise-button top-buttons" type="button" src="assets/exercise.svg" value="Exercise">
+                  </div>
+                  <p class="category-error"><img class="error-image" src = "assets/warning.svg"/> A category selection is required.</p>
+                  <div class="what-question">
+                      <label for="question">What would you like to accomplish during this time?</label>
+                      <input class="question" type="text">
+                      <p class="description-error"><img class="error-image" src = "assets/warning.svg"/> A description is required.</p>
+                  </div>
+                  <div class="minutes-seconds-row">
+                      <div class="minutes-column">
+                          <label for="minutes">Minutes</label>
+                          <input class="minutes" type="text">
+                          <p class="minutes-error"><img class="error-image" src = "assets/warning.svg"/> A length is required.</p>
+                      </div>
+                      <div class="seconds-column">
+                          <label for="seconds">Seconds</label>
+                          <input class="seconds" type="text">
+                          <p class="seconds-error"><img class="error-image" src = "assets/warning.svg"/> A length is required.</p>
+                      </div>
+                  </div>
+                  <input class="start-button" type="button" value="Start Activity">
+              </form>
+          </section>
+      </main>
         <main class="site-right-main">
             <h2 class="past-activities">Past Activities</h2>
             <p class="site-right-activities">You haven't logged any activities yet. Complete the form to the left to get started!</p>
