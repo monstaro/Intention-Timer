@@ -18,7 +18,6 @@ exerciseButton.addEventListener('click', function() {
 var startButton = document.querySelector('.start-activity-button')
 var siteLeft = document.querySelector('.site-left-main')
 
-// startButton.addEventListener('click', displayActivity)
 startButton.addEventListener('click', displayError)
 
 
@@ -46,5 +45,7 @@ function displayError() {
     var secondsInput = document.querySelector('.seconds-input');
     if (activityInput === "") {
         descriptionError.classList.toggle('description-error-active')
+    } else {
+        displayActivity();
     }
 }
