@@ -15,24 +15,24 @@ exerciseButton.addEventListener('click', function() {
 
 
 
-var startButton = document.querySelector('.start-button')
+var startButton = document.querySelector('.start-activity-button')
 var siteLeft = document.querySelector('.site-left-main')
 
 startButton.addEventListener('click', displayActivity)
 
 
 function displayActivity() {
-    var secondsInput = document.querySelector('.seconds').value;
-    var minutesInput = document.querySelector('.minutes').value;
-    var accomplishInput = document.querySelector('.question').value;
+    var secondsInput = document.querySelector('.seconds-input').value;
+    var minutesInput = document.querySelector('.minutes-input').value;
+    var accomplishInput = document.querySelector('.activity-input').value;
     console.log(accomplishInput, secondsInput, minutesInput);
     siteLeft.innerHTML = `<h2 class="new-activity">Current Activity</h2>
                             <section class="site-left-box">
                             <p class="start-timer-goal">${accomplishInput} </p>
                             <p class="start-timer-counter">${minutesInput}:${secondsInput} </p>
                             <div class="start-timer-section">
-                            <button class="start-timer-button">START</button>        
-                            </div>             
+                            <button class="start-timer-button">START</button>
+                            </div>
                             </section>
     `
 }
