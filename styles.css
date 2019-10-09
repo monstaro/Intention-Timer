@@ -252,6 +252,18 @@ input[type="button"]:hover {
     margin: auto;
 }
 
+.study-timer-button {
+    background-color: #46424D;
+    border: 2px solid #B3FD78;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    color: #FFFFFF;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin: auto;
+}
+
 .start-timer-goal {
     font-size: 1.5em;
     text-align: center;
