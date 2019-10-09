@@ -23,7 +23,7 @@ startButton.addEventListener('click', displayActivity)
 
 function displayActivity() {
     var secondsInput = document.querySelector('.seconds').value;
-    var minutesInput = document.querySelector('.minute').value;
+    var minutesInput = document.querySelector('.minutes').value;
     var accomplishInput = document.querySelector('.question').value;
     console.log(accomplishInput, secondsInput, minutesInput);
     siteLeft.innerHTML = `<h2 class="new-activity">Current Activity</h2>
