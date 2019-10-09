@@ -1,32 +1,28 @@
-body,
-html {
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
     color: white;
+    background-color: #2B2733;
 }
 
 header {
     background-color: #46424D;
     color: white;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     text-transform: uppercase;
 }
-input {
-  color: white;
-}
-h1 {
-  background-color: #46424D;
-}
-h2 {
-  margin-left: 15px;
-}
-h3 {
-  padding-left: 5em;
-}
 
 .title {
-    margin: 0;
+  margin: 0;
 }
 
 .site-left-main {
@@ -34,85 +30,187 @@ h3 {
     border-right: 1px solid grey;
     color: white;
     width: 70%;
-    display: inline-block;
+}
+
+.new-activity {
+    margin-left: 20px;
 }
 
 .site-left-box {
-    height: 100%;
     background-color: #46424D;
     margin: 20px;
-    padding: 20px;
-}
-.site-left-form {
-  background-color: #46424D;
+    padding: 70px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px -5px #000000;
 }
 
-.category-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 10%;
-  margin-right: 10%;
+.site-left-form {
+    background-color: #46424D;
 }
 
 .study-button {
-  background-image: url(assets/study.svg);
-  background-size: 25px;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-image: url(assets/study.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 20%;
+    background-position-y: 0.4em;
 }
 
-.meditate-button{
-  background-image: url(assets/meditate.svg);
-  background-size: 25px;
-  background-position: center;
-  background-repeat: no-repeat;
+.study-button-active {
+    background-image: url(assets/study-active.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 20%;
+    background-position-y: 0.4em;
 }
 
-.exercise-button{
-  background-image: url(assets/exercise.svg);
-  background-size: 25px;
-  background-position: center;
-  background-repeat: no-repeat;
+.meditate-button {
+    background-image: url(assets/meditate.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 20%;
+    background-position-y: 0.4em;
 }
 
-.study-button, .meditate-button, .exercise-button {
-  border: white 3px solid;
-  background-color: #46424D;
-  width: 15em;
-  height: 7em;
-  padding-top: 25px;
+.meditate-button-active {
+    background-image: url(assets/meditate-active.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 20%;
+    background-position-y: 0.4em;
 }
 
-.what-question, .minutes-column, .seconds-column {
-  display: inline-block;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  width: 100%;
+.exercise-button {
+    background-image: url(assets/exercise.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 20%;
+    background-position-y: 0.4em;
 }
+
+.exercise-button-active {
+    background-image: url(assets/exercise-active.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 20%;
+    background-position-y: 0.4em;
+}
+
+.top-buttons {
+    height: 4em;
+    width: 10em;
+    color: white;
+    background-color: #46424D;
+    padding: 20px;
+    border-radius: 2px;
+    font-size: 1.1em;
+    line-height: 4em;
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3em;
+}
+
+.minutes-seconds-row {
+    display: flex;
+    justify-content: space-between;
+}
+
 .question {
-  outline: 0;
-  border-width: 0 0 2px;
-  border-color: white;
-  width: 100%;
-  background-color: #46424D;
-  margin-top: 30px;
+    display: block;
+    background-color: #46424D;
+    border: none;
+    border-bottom: 1px solid white;
+    width: 100%;
+    margin-bottom: 2em;
+    font-size: 3em;
 }
-.minutes, .seconds {
-  outline: 0;
-  border-width: 0 0 2px;
-  border-color: white;
-  display: block;
-  background-color: #46424D;
-  margin-top: 30px;
-  width: 100%;
+
+.minute {
+    display: block;
+    background-color: #46424D;
+    border: none;
+    border-bottom: 1px solid white;
+    margin-bottom: 0.5em;
+    font-size: 3em;
+    width: 60%;
 }
+
+.seconds {
+    display: block;
+    background-color: #46424D;
+    border: none;
+    border-bottom: 1px solid white;
+    margin-bottom: 0.5em;
+    font-size: 3em;
+    width: 60%;
+}
+
 .start-button {
-  display: block;
+    background-color: #EEEEEE;
+    color: #46424D;
+    font-size: 1em;
+    padding: 8px 30px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    float: right;
 }
+
 .site-right-main {
     background-color: #2B2733;
-    width: 28%;
-    display: inline-block;
+    width: 29.9%;
+}
+
+.past-activities {
+    margin: 10px;
+}
+
+.site-right-activities {
+    margin: 10px;
+}
+
+.activity-box {
+    background-color: #46424D;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px -5px #000000;
+}
+
+.activity-box-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.activity-name {
+    font-weight: 700;
+}
+
+.activity-time {
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.activity-description {
+    font-weight: 300;
+}
+
+.color-tab {
+    height: 2em;
+    width: 2%;
+    background: orange;
+    color: orange;
+    border-radius: 10px;
+}
+
+input[type="button"]:hover {
+    cursor: pointer;
+}
+
+.main-content {
+  display: flex;
+  background-color: #2B2733;
+  height: calc(100% - 59px);
 }
