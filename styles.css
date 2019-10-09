@@ -123,18 +123,15 @@ h3 {
   box-sizing: border-box;
 }
 
-html {
-  background: black;
+html, body {
   height: 100%;
   margin: 0;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
     color: white;
     background-color: #2B2733;
-    height: 100%;
 }
 
 header {
@@ -237,9 +234,14 @@ header {
     padding-bottom: 3em;
 }
 
+.minutes-seconds-row {
+    display: flex;
+    justify-content: space-between;
+}
+
 .question {
     display: block;
-    /* background-color: #46424D; */
+    background-color: #46424D;
     border: none;
     border-bottom: 1px solid white;
     width: 100%;
@@ -247,14 +249,9 @@ header {
     font-size: 3em;
 }
 
-.minutes-seconds-row {
-    display: flex;
-    justify-content: space-between;
-}
-
 .minute {
     display: block;
-    /* background-color: #46424D; */
+    background-color: #46424D;
     border: none;
     border-bottom: 1px solid white;
     margin-bottom: 0.5em;
@@ -264,7 +261,7 @@ header {
 
 .seconds {
     display: block;
-    /* background-color: #46424D; */
+    background-color: #46424D;
     border: none;
     border-bottom: 1px solid white;
     margin-bottom: 0.5em;
@@ -305,7 +302,6 @@ header {
 
 .activity-box-top {
     display: flex;
-    /* flex-direction: row; */
     justify-content: space-between;
 }
 
@@ -337,5 +333,7 @@ input[type="button"]:hover {
 .main-content {
   display: flex;
   background-color: #2B2733;
+  /* We want the height of the section to take up all the rest of the body space,
+  so we calculate 100% (which is the body height) minus the height of the header - 59px */
   height: calc(100% - 59px);
 }
