@@ -16,10 +16,11 @@ exerciseButton.addEventListener('click', function() {
 
 
 var startButton = document.querySelector('.start-activity-button')
+var startTimer = document.querySelector('.start-timer-button')
 var siteLeft = document.querySelector('.site-left-main')
 
-startButton.addEventListener('click', displayActivity)
-
+startButton.addEventListener('click', displayError)
+studyButton.addEventListener('click', changeTimerStudy)
 
 function displayActivity() {
     var secondsInput = document.querySelector('.seconds-input').value;
@@ -36,3 +37,66 @@ function displayActivity() {
                             </section>
     `
 }
+
+function displayError() {
+    // var categoryError = document.querySelector('.category-error');
+    var activityInput = document.querySelector('.activity-input').value;
+    var descriptionError = document.querySelector('.description-error')
+    var minutesInput = document.querySelector('.minutes-input');
+    var secondsInput = document.querySelector('.seconds-input');
+    if (activityInput === "") {
+        descriptionError.classList.add('description-error-active');
+        activityInput.classList.add('value-error-active');
+
+    } else {
+        displayActivity();
+    }
+}
+
+
+function changeTimerStudy() {
+    startTimer.classList.toggle('study-timer-button')
+}
+
+
+
+// --------------------------------------------------------------------------
+//
+// var categoryValue = "";
+// var study = document.querySelector('.study-button');
+// var meditate = document.querySelector('.meditate-button');
+// var exercise = document.querySelector('.exercise-button');
+// var categoryButtons = document.querySelector('.category-buttons');
+// var startButton = document.querySelector('.start-activity-button');
+// var descriptionError = document.querySelector('.description-error');
+// var minutesError = document.querySelector('.minutes-error');
+// var secondsError = document.querySelector('.seconds-error');
+// var activityValue = document.querySelector('.activity-input').innerText;
+// var minutesValue = document.querySelector('.minutes-input').innerText;
+// var secondsValue = document.querySelector('.seconds-input').innerText;
+//
+// function errorMessages() {
+//   if (categoryValue === "") {
+//     categoryButtons.classList.add('category-buttons-error');
+//   }
+//   elseif (activityValue === "") {
+//     descriptionError.classList.add('description-error-active');
+//     activityValue.classList.add('value-error-active');
+//   }
+//   elseif (minutesValue === "") {
+//     minutesError.classList.add('description-error-active');
+//     minutesValue.classList.add('value-error-active');
+//   }
+//   elseif (secondsValue === "") {
+//     secondsError.classList.add('.description-error-active');
+//     secondsValue.classList.add('value-error-active');
+//   }
+// }
+//
+// startButton.addEventListener('click', function () {
+//   if (categoryValue === "", activityValue === "", minutesValue === "", secondsValue === "") {
+//     errorMessages();
+//   }
+// }
+//
+// --------------------------------------------------------------------------

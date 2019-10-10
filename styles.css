@@ -113,8 +113,8 @@ header {
 }
 
 .category-error {
-  padding-bottom: 3em;
-  text-align: center;
+    padding-bottom: 3em;
+    text-align: center;
 }
 
 .minutes-seconds-row {
@@ -135,10 +135,9 @@ header {
     color: white;
     padding-left: 5px;
     padding-top: 5px;
-
 }
 
-.question-error-active {
+.value-error-active {
     border-bottom: #EFB7EC 1px solid;
 }
 
@@ -146,22 +145,34 @@ header {
 .description-error,
 .minutes-error,
 .seconds-error {
-  margin-bottom: 2em;
-  color: #EFB7EC;
-  /* visibility: hidden; */
+    margin-bottom: 2em;
+    color: #EFB7EC;
+    visibility: hidden;
 }
 
 .description-error-active {
-  visibility: visible;
+    visibility: visible;
+}
+
+.category-error-active {
+    visibility: visible;
+}
+
+.minutes-error-active {
+    visibility: visible;
+}
+
+.seconds-error-active {
+    visibility: visible;
 }
 
 .error-image {
-  height: 15px;
-  width: 15px;
+    height: 15px;
+    width: 15px;
 }
 
 .seconds-column {
-  margin-left: 10em;
+    margin-left: 10em;
 }
 
 .start-activity-button {
@@ -225,8 +236,6 @@ input[type="button"]:hover {
     cursor: pointer;
 }
 
-
-
 .start-timer-section {
     display: flex;
 }
@@ -234,6 +243,18 @@ input[type="button"]:hover {
 .start-timer-button {
     background-color: #46424D;
     border: 2px solid;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    color: #FFFFFF;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin: auto;
+}
+
+.study-timer-button {
+    background-color: #46424D;
+    border: 2px solid #B3FD78;
     border-radius: 50%;
     width: 200px;
     height: 200px;
