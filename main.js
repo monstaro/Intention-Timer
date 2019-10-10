@@ -1,12 +1,21 @@
+var startButton = document.querySelector('.start-activity-button');
+var startTimer = document.querySelector('.start-timer-button');
+var siteLeft = document.querySelector('.site-left-main');
+var categoryValue = "";
 var studyButton = document.querySelector('.study-button');
+var meditateButton = document.querySelector('.meditate-button');
+var exerciseButton = document.querySelector('.exercise-button');
+
+startButton.addEventListener('click', displayError)
+
 studyButton.addEventListener('click', function() {
     studyButton.classList.toggle('study-button-active');
     meditateButton.classList.remove('meditate-button-active');
     exerciseButton.classList.remove('exercise-button-active');
     categoryValue = studyButton.value;
+    changeTimerStudy();
 })
 
-var meditateButton = document.querySelector('.meditate-button');
 meditateButton.addEventListener('click', function() {
     meditateButton.classList.toggle('meditate-button-active');
     studyButton.classList.remove('study-button-active');
@@ -14,7 +23,6 @@ meditateButton.addEventListener('click', function() {
     categoryValue = meditateButton.value;
 })
 
-var exerciseButton = document.querySelector('.exercise-button');
 exerciseButton.addEventListener('click', function() {
     exerciseButton.classList.toggle('exercise-button-active');
     meditateButton.classList.remove('meditate-button-active');
@@ -22,16 +30,6 @@ exerciseButton.addEventListener('click', function() {
     categoryValue = exerciseButton.value;
 })
 
-
-
-var startButton = document.querySelector('.start-activity-button');
-var startTimer = document.querySelector('.start-timer-button');
-var siteLeft = document.querySelector('.site-left-main');
-var categoryValue = "";
-
-
-startButton.addEventListener('click', displayError)
-    // studyButton.addEventListener('click', changeTimerStudy)
 
 function displayActivity() {
     var secondsInput = document.querySelector('.seconds-input').value;
@@ -50,17 +48,6 @@ function displayActivity() {
 }
 
 
-// function displayError() {
-//     var activityInput = document.querySelector('.activity-input').value;
-//     var descriptionError = document.querySelector('.description-error')
-//     var minutesInput = document.querySelector('.minutes-input');
-//     var secondsInput = document.querySelector('.seconds-input');
-//     if (activityInput === "") {
-//         descriptionError.classList.add('description-error-active')
-//     } else {
-//         displayActivity();
-//     }
-// }
 
 function displayError() {
     var activityInput = document.querySelector('.activity-input').value;
@@ -70,25 +57,29 @@ function displayError() {
     var minutesError = document.querySelector('.minutes-error');
     var secondsError = document.querySelector('.seconds-error');
     var categoryError = document.querySelector('.category-error');
+    var noError = true;
     if (activityInput === "") {
         activityError.classList.add('activity-error-active')
+        noError = false;
     }
     if (categoryValue === "") {
         categoryError.classList.add('category-error-active')
+        noError = false;
     }
     if (minutesInput === "") {
         minutesError.classList.add('minutes-error-active')
+        noError = false;
     }
     if (secondsInput === "") {
         secondsError.classList.add('seconds-error-active')
-    } else {
+        noError = false;
+    }
+    if (noError) {
         displayActivity();
     }
 }
 
 
-
-
-// function changeTimerStudy() {
-//     startTimer.classList.toggle('study-timer-button')
-// }
+function changeTimerStudy() {
+    console.log(siteLeft)
+}
