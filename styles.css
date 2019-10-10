@@ -142,7 +142,7 @@ header {
 }
 
 .category-error,
-.description-error,
+.activity-error,
 .minutes-error,
 .seconds-error {
     margin-bottom: 2em;
@@ -150,7 +150,7 @@ header {
     visibility: hidden;
 }
 
-.description-error-active {
+.activity-error-active {
     visibility: visible;
 }
 
