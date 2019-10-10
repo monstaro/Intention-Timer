@@ -1,16 +1,24 @@
 var studyButton = document.querySelector('.study-button');
 studyButton.addEventListener('click', function() {
     studyButton.classList.toggle('study-button-active');
+    meditateButton.classList.remove('meditate-button-active');
+    exerciseButton.classList.remove('exercise-button-active');
 })
 
 var meditateButton = document.querySelector('.meditate-button');
 meditateButton.addEventListener('click', function() {
     meditateButton.classList.toggle('meditate-button-active');
+    studyButton.classList.remove('study-button-active');
+    exerciseButton.classList.remove('exercise-button-active');
 })
 
 var exerciseButton = document.querySelector('.exercise-button');
 exerciseButton.addEventListener('click', function() {
     exerciseButton.classList.toggle('exercise-button-active');
+    meditateButton.classList.remove('meditate-button-active');
+    studyButton.classList.remove('study-button-active');
+
+
 })
 
 
@@ -38,6 +46,7 @@ function displayActivity() {
     `
 }
 
+
 function displayError() {
     // var categoryError = document.querySelector('.category-error');
     var activityInput = document.querySelector('.activity-input').value;
@@ -45,7 +54,7 @@ function displayError() {
     var minutesInput = document.querySelector('.minutes-input');
     var secondsInput = document.querySelector('.seconds-input');
     if (activityInput === "") {
-        descriptionError.classList.toggle('description-error-active')
+        descriptionError.classList.add('description-error-active')
     } else {
         displayActivity();
     }
