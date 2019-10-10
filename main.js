@@ -16,10 +16,11 @@ exerciseButton.addEventListener('click', function() {
 
 
 var startButton = document.querySelector('.start-activity-button')
+var startTimer = document.querySelector('.start-timer-button')
 var siteLeft = document.querySelector('.site-left-main')
 
-startButton.addEventListener('click', displayActivity)
-
+startButton.addEventListener('click', displayError)
+studyButton.addEventListener('click', changeTimerStudy)
 
 function displayActivity() {
     var secondsInput = document.querySelector('.seconds-input').value;
@@ -35,4 +36,22 @@ function displayActivity() {
                             </div>
                             </section>
     `
+}
+
+function displayError() {
+    // var categoryError = document.querySelector('.category-error');
+    var activityInput = document.querySelector('.activity-input').value;
+    var descriptionError = document.querySelector('.description-error')
+    var minutesInput = document.querySelector('.minutes-input');
+    var secondsInput = document.querySelector('.seconds-input');
+    if (activityInput === "") {
+        descriptionError.classList.toggle('description-error-active')
+    } else {
+        displayActivity();
+    }
+}
+
+
+function changeTimerStudy() {
+    startTimer.classList.toggle('study-timer-button')
 }
