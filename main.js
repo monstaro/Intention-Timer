@@ -1,10 +1,10 @@
 var startButton = document.querySelector('.start-activity-button');
-var startTimer = document.querySelector('.start-timer-button');
 var siteLeft = document.querySelector('.site-left-main');
 var categoryValue = "";
 var studyButton = document.querySelector('.study-button');
 var meditateButton = document.querySelector('.meditate-button');
 var exerciseButton = document.querySelector('.exercise-button');
+var startTimer = document.querySelector('.start-timer-button');
 
 startButton.addEventListener('click', displayError)
 
@@ -13,7 +13,7 @@ studyButton.addEventListener('click', function() {
     meditateButton.classList.remove('meditate-button-active');
     exerciseButton.classList.remove('exercise-button-active');
     categoryValue = studyButton.value;
-    changeTimerStudy();
+
 })
 
 meditateButton.addEventListener('click', function() {
@@ -30,12 +30,10 @@ exerciseButton.addEventListener('click', function() {
     categoryValue = exerciseButton.value;
 })
 
-
 function displayActivity() {
     var secondsInput = document.querySelector('.seconds-input').value;
     var minutesInput = document.querySelector('.minutes-input').value;
     var accomplishInput = document.querySelector('.activity-input').value;
-    console.log(accomplishInput, secondsInput, minutesInput);
     siteLeft.innerHTML = `<h2 class="new-activity">Current Activity</h2>
                             <section class="site-left-box">
                             <p class="start-timer-goal">${accomplishInput} </p>
@@ -45,9 +43,17 @@ function displayActivity() {
                             </div>
                             </section>
     `
+    startTimer = document.querySelector('.start-timer-button');
+    if (categoryValue = "Study") {
+        startTimer.classList.toggle('study-timer-button')
+    }
+    if (categoryValue = "Meditate") {
+        startTimer.classList.toggle('meditate-timer-button')
+    }
+    if (categoryValue = "Exercise") {
+        startTimer.classList.toggle('exercise-timer-button')
+    }
 }
-
-
 
 function displayError() {
     var activityInput = document.querySelector('.activity-input').value;
@@ -77,9 +83,4 @@ function displayError() {
     if (noError) {
         displayActivity();
     }
-}
-
-
-function changeTimerStudy() {
-    console.log(siteLeft)
 }
