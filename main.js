@@ -5,8 +5,13 @@ var studyButton = document.querySelector('.study-button');
 var meditateButton = document.querySelector('.meditate-button');
 var exerciseButton = document.querySelector('.exercise-button');
 var startTimer = document.querySelector('.start-timer-button');
+var minutesInput = document.querySelector('.minutes-input');
+var secondsInput = document.querySelector('.seconds-input');
+var numbers = /^[0-9]+$/;
 
-startButton.addEventListener('click', displayError)
+startButton.addEventListener('click', displayError);
+minutesInput.addEventListener('input', checkNumMin);
+secondsInput.addEventListener('input', checkNumSec);
 
 studyButton.addEventListener('click', function() {
     studyButton.classList.toggle('study-button-active');
@@ -82,5 +87,23 @@ function displayError() {
     }
     if (noError) {
         displayActivity();
+    }
+}
+
+
+
+function checkNumMin() {
+    if (minutesInput.value.match(numbers)) {
+        var bool = false;
+    } else {
+        minutesInput.value = ""
+    }
+}
+
+function checkNumSec() {
+    if (secondsInput.value.match(numbers)) {
+        var bool = false;
+    } else {
+        secondsInput.value = ""
     }
 }
