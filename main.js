@@ -1,26 +1,35 @@
+var startButton = document.querySelector('.start-activity-button');
+var startTimer = document.querySelector('.start-timer-button');
+var siteLeft = document.querySelector('.site-left-main');
+var categoryValue = "";
 var studyButton = document.querySelector('.study-button');
-studyButton.addEventListener('click', function() {
-    studyButton.classList.toggle('study-button-active');
-})
-
 var meditateButton = document.querySelector('.meditate-button');
-meditateButton.addEventListener('click', function() {
-    meditateButton.classList.toggle('meditate-button-active');
-})
-
 var exerciseButton = document.querySelector('.exercise-button');
-exerciseButton.addEventListener('click', function() {
-    exerciseButton.classList.toggle('exercise-button-active');
-})
-
-
-
-var startButton = document.querySelector('.start-activity-button')
-var startTimer = document.querySelector('.start-timer-button')
-var siteLeft = document.querySelector('.site-left-main')
 
 startButton.addEventListener('click', displayError)
-studyButton.addEventListener('click', changeTimerStudy)
+
+studyButton.addEventListener('click', function() {
+    studyButton.classList.toggle('study-button-active');
+    meditateButton.classList.remove('meditate-button-active');
+    exerciseButton.classList.remove('exercise-button-active');
+    categoryValue = studyButton.value;
+    changeTimerStudy();
+})
+
+meditateButton.addEventListener('click', function() {
+    meditateButton.classList.toggle('meditate-button-active');
+    studyButton.classList.remove('study-button-active');
+    exerciseButton.classList.remove('exercise-button-active');
+    categoryValue = meditateButton.value;
+})
+
+exerciseButton.addEventListener('click', function() {
+    exerciseButton.classList.toggle('exercise-button-active');
+    meditateButton.classList.remove('meditate-button-active');
+    studyButton.classList.remove('study-button-active');
+    categoryValue = exerciseButton.value;
+})
+
 
 function displayActivity() {
     var secondsInput = document.querySelector('.seconds-input').value;
@@ -38,20 +47,39 @@ function displayActivity() {
     `
 }
 
+
+
 function displayError() {
-    // var categoryError = document.querySelector('.category-error');
     var activityInput = document.querySelector('.activity-input').value;
-    var descriptionError = document.querySelector('.description-error')
-    var minutesInput = document.querySelector('.minutes-input');
-    var secondsInput = document.querySelector('.seconds-input');
+    var minutesInput = document.querySelector('.minutes-input').value;
+    var secondsInput = document.querySelector('.seconds-input').value;
+    var activityError = document.querySelector('.activity-error')
+    var minutesError = document.querySelector('.minutes-error');
+    var secondsError = document.querySelector('.seconds-error');
+    var categoryError = document.querySelector('.category-error');
+    var noError = true;
     if (activityInput === "") {
-        descriptionError.classList.toggle('description-error-active')
-    } else {
+        activityError.classList.add('activity-error-active')
+        noError = false;
+    }
+    if (categoryValue === "") {
+        categoryError.classList.add('category-error-active')
+        noError = false;
+    }
+    if (minutesInput === "") {
+        minutesError.classList.add('minutes-error-active')
+        noError = false;
+    }
+    if (secondsInput === "") {
+        secondsError.classList.add('seconds-error-active')
+        noError = false;
+    }
+    if (noError) {
         displayActivity();
     }
 }
 
 
 function changeTimerStudy() {
-    startTimer.classList.toggle('study-timer-button')
+    console.log(siteLeft)
 }
