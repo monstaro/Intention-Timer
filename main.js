@@ -91,19 +91,19 @@ function displayError() {
 
 
 
-// function checkNumMin() {
-//     if (minutesInput.value.match(numbers)) {
-//         var bool = false;
-//     } else {
-//         minutesInput.value = ""
-//     }
-// }
+function checkNumMin() {
+    if (minutesInput.value.match(numbers)) {
+        var bool = false;
+    } else {
+        minutesInput.value = ""
+    }
+}
 
 
-// function checkNumSec() {
-//     if (secondsInput.value.match(numbers)) {
-//         var bool = false;
-//     } else {
-//         secondsInput.value = ""
-//     }
-// }
+function checkNumSec() {
+    if (secondsInput.value.match(numbers)) {
+        var bool = false;
+    } else {
+        secondsInput.value = ""
+    }
+}
