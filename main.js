@@ -10,8 +10,8 @@ var secondsInput = document.querySelector('.seconds-input');
 var numbers = /^[0-9]+$/;
 
 startButton.addEventListener('click', displayError);
-minutesInput.addEventListener('input', checkNumMin);
-secondsInput.addEventListener('input', checkNumSec);
+// minutesInput.addEventListener('input', checkNumMin);
+// secondsInput.addEventListener('input', checkNumSec);
 
 studyButton.addEventListener('click', function() {
     studyButton.classList.toggle('study-button-active');
@@ -49,14 +49,13 @@ function displayActivity() {
                             </section>
     `
     startTimer = document.querySelector('.start-timer-button');
-    if (categoryValue = "Study") {
-        startTimer.classList.toggle('study-timer-button')
+    if (categoryValue === "Study") {
+        startTimer.classList.add('study-timer-button')
     }
-    if (categoryValue = "Meditate") {
-        startTimer.classList.toggle('meditate-timer-button')
-    }
-    if (categoryValue = "Exercise") {
-        startTimer.classList.toggle('exercise-timer-button')
+    if (categoryValue === "Meditate") {
+        startTimer.classList.add('meditate-timer-button')
+    } else if (categoryValue === "Exercise") {
+        startTimer.classList.add('exercise-timer-button')
     }
 }
 
@@ -92,18 +91,19 @@ function displayError() {
 
 
 
-function checkNumMin() {
-    if (minutesInput.value.match(numbers)) {
-        var bool = false;
-    } else {
-        minutesInput.value = ""
-    }
-}
+// function checkNumMin() {
+//     if (minutesInput.value.match(numbers)) {
+//         var bool = false;
+//     } else {
+//         minutesInput.value = ""
+//     }
+// }
 
-function checkNumSec() {
-    if (secondsInput.value.match(numbers)) {
-        var bool = false;
-    } else {
-        secondsInput.value = ""
-    }
-}
+
+// function checkNumSec() {
+//     if (secondsInput.value.match(numbers)) {
+//         var bool = false;
+//     } else {
+//         secondsInput.value = ""
+//     }
+// }
