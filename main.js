@@ -10,8 +10,9 @@ var secondsInput = document.querySelector('.seconds-input');
 var numbers = /^[0-9]+$/;
 
 startButton.addEventListener('click', displayError);
-// minutesInput.addEventListener('input', checkNumMin);
-// secondsInput.addEventListener('input', checkNumSec);
+minutesInput.addEventListener('input', checkNumMin);
+secondsInput.addEventListener('input', checkNumSec);
+
 
 studyButton.addEventListener('click', function() {
     studyButton.classList.toggle('study-button-active');
@@ -35,27 +36,21 @@ exerciseButton.addEventListener('click', function() {
     categoryValue = exerciseButton.value;
 })
 
-function displayActivity() {
-    var secondsInput = document.querySelector('.seconds-input').value;
-    var minutesInput = document.querySelector('.minutes-input').value;
-    var accomplishInput = document.querySelector('.activity-input').value;
-    siteLeft.innerHTML = `<h2 class="new-activity">Current Activity</h2>
-                            <section class="site-left-box">
-                            <p class="start-timer-goal">${accomplishInput} </p>
-                            <p class="start-timer-counter">${minutesInput}:${secondsInput} </p>
-                            <div class="start-timer-section">
-                            <button class="start-timer-button">START</button>
-                            </div>
-                            </section>
-    `
-    startTimer = document.querySelector('.start-timer-button');
-    if (categoryValue === "Study") {
-        startTimer.classList.add('study-timer-button')
+
+function checkNumMin() {
+    if (minutesInput.value.match(numbers)) {
+        var bool = false;
+    } else {
+        minutesInput.value = ""
     }
-    if (categoryValue === "Meditate") {
-        startTimer.classList.add('meditate-timer-button')
-    } else if (categoryValue === "Exercise") {
-        startTimer.classList.add('exercise-timer-button')
+}
+
+
+function checkNumSec() {
+    if (secondsInput.value.match(numbers)) {
+        var bool = false;
+    } else {
+        secondsInput.value = ""
     }
 }
 
@@ -89,21 +84,50 @@ function displayError() {
     }
 }
 
-
-
-function checkNumMin() {
-    if (minutesInput.value.match(numbers)) {
-        var bool = false;
-    } else {
-        minutesInput.value = ""
+function displayActivity() {
+    secondsInput = document.querySelector('.seconds-input').value;
+    minutesInput = document.querySelector('.minutes-input').value;
+    var accomplishInput = document.querySelector('.activity-input').value;
+    siteLeft.innerHTML = `<h2 class="new-activity">Current Activity</h2>
+                            <section class="site-left-box">
+                            <p class="start-timer-goal">${accomplishInput} </p>
+                            <p class="start-timer-counter">${minutesInput}:${secondsInput} </p>
+                            <div class="start-timer-section">
+                            <button class="start-timer-button">START</button>
+                            </div>
+                            </section>
+    `
+    startTimer = document.querySelector('.start-timer-button');
+    if (categoryValue === "Study") {
+        startTimer.classList.toggle('study-timer-button')
     }
+    if (categoryValue === "Meditate") {
+        startTimer.classList.toggle('meditate-timer-button')
+    } else if (categoryValue === "Exercise") {
+        startTimer.classList.toggle('exercise-timer-button')
+    }
+    startTimer.addEventListener('click', startCountdown)
 }
 
 
-function checkNumSec() {
-    if (secondsInput.value.match(numbers)) {
-        var bool = false;
-    } else {
-        secondsInput.value = ""
+
+
+function startCountdown() {
+    console.log(`${minutesInput}`)
+    console.log(`${secondsInput}`)
+    secondsInput--
+    if (secondsInput === 0 && minutesInput > 0) {
+        minutesInput--
+        secondsInput = 59
+    }
+    secondsInput.innerText = secondsInput;
+    minutesInput.innerText = minutesInput;
+    if (secondsInput === 0 && minutesInput === 0) {
+        return
+    }
+    if (secondsInput !== 0 && minutesInput > -1) {
+        setTimeout(() => {
+            beginTimer(secondsInput, minutesInput)
+        }, 1000);
     }
 }
