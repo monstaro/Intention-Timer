@@ -34,14 +34,14 @@
                     <div class="minutes-seconds-row">
                         <div class="minutes-column">
                             <label for="minutes-input">Minutes</label>
-                            <input class="minutes-input" type="text">
-                            <p class="minutes-error"><img class="error-image" src="assets/warning.svg" /> A length is required.</p>
+                            <input class="minutes-input" type="number" onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 190">
+                            <p class="minutes-error"><img class="error-image" src="assets/warning.svg" /> A numeric length is required.</p>
                             <p class="num-error"></p>
                         </div>
                         <div class="seconds-column">
                             <label for="seconds-input">Seconds</label>
-                            <input class="seconds-input" type="text">
-                            <p class="seconds-error"><img class="error-image" src="assets/warning.svg" /> A length is required.</p>
+                            <input class="seconds-input" type="number" onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 190">
+                            <p class="seconds-error"><img class="error-image" src="assets/warning.svg" /> A numeric length is required.</p>
                         </div>
                     </div>
                     <input class="start-activity-button" type="button" value="Start Activity">
