@@ -113,17 +113,16 @@ function displayActivity() {
 //     startCountdown(secondsInput.value, minutesInput.value)
 // }
 
-function startCountdown(seconds, minutes) {
-    var seconds = secondsInput;
-    var minutes = minutesInput;
+function startCountdown() {
     var goal = accomplishInput;
     secondsInput--
     if (secondsInput === 0 && minutesInput > 0) {
         minutesInput--
         secondsInput = 59
     }
-    secondsInput.innerText = secondsInput;
-    minutesInput.innerText = minutesInput;
+    if (secondsInput >= 0 && secondsInput <= 9) {
+        secondsInput = `0${secondsInput}`
+    }
     if (secondsInput === 0 && minutesInput === 0) {
         return
     }
@@ -132,10 +131,38 @@ function startCountdown(seconds, minutes) {
             startCountdown(secondsInput, minutesInput)
         }, 1000);
     }
+    // // if (secondsInput !== 0 && minutesInput > -1) {
+    // //     secondsInput--
+    // //     setInterval(() => {
+    // //         startCountdown()
+    // //     }, 1000);
+    // // }
+    // // if (secondsInput === 0) {
+    // //     secondsInput = 59
+    // // }
+    // secondsInput--
+    // if (secondsInput !== 0 && minutesInput > -1) {
+    //     setTimeout(() => {
+    //         startCountdown()
+    //     }, 1000);
+    // }
+
+    // if (minutesInput > 0 && secondsInput === 0) {
+    //     minutesInput--
+    //     secondsInput = 59
+    // }
+
+    // // if (secondsInput === 0 && minutesInput > 0) {
+    // //     minutesInput--
+    // //     secondsInput = 59
+    // // }
+    // if (secondsInput === 0 && minutesInput === 0) {
+    //     return
+    // }
     siteLeft.innerHTML = `<h2 class="new-activity">Current Activity</h2>
     <section class="site-left-box">
     <p class="start-timer-goal">${goal} </p>
-    <p class="start-timer-counter">${minutes}:${seconds} </p>
+    <p class="start-timer-counter">${minutesInput}:${secondsInput} </p>
     <div class="start-timer-section">
     <button class="start-timer-button">START</button>
     </div>
