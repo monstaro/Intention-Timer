@@ -92,6 +92,10 @@ function displayActivity() {
     if (minutesInputValue.toString().length === 1) {
       minutesInputDisplay = `0${minutesInputValue}`
     }
+
+    secondsInput = document.querySelector('.seconds-input').value;
+    minutesInput = document.querySelector('.minutes-input').value;
+    accomplishInput = document.querySelector('.activity-input').value;
     siteLeft.innerHTML = `<h2 class="new-activity">Current Activity</h2>
                             <section class="site-left-box">
                             <p class="start-timer-goal">${activityInputValue} </p>
@@ -115,7 +119,9 @@ function displayActivity() {
     })
 }
 
-
+// function starttCountdown() {
+//     startCountdown(secondsInput.value, minutesInput.value)
+// }
 
 
 function startCountdown(secondsInputValue, minutesInputValue) {
@@ -143,3 +149,4 @@ function startCountdown(secondsInputValue, minutesInputValue) {
         }, 1000);
     }
 }
+
