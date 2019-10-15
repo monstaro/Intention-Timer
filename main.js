@@ -87,7 +87,7 @@ function displayError() {
 function displayActivity() {
     secondsInput = document.querySelector('.seconds-input').value;
     minutesInput = document.querySelector('.minutes-input').value;
-    var accomplishInput = document.querySelector('.activity-input').value;
+    accomplishInput = document.querySelector('.activity-input').value;
     siteLeft.innerHTML = `<h2 class="new-activity">Current Activity</h2>
                             <section class="site-left-box">
                             <p class="start-timer-goal">${accomplishInput} </p>
@@ -109,12 +109,14 @@ function displayActivity() {
     startTimer.addEventListener('click', startCountdown)
 }
 
+// function starttCountdown() {
+//     startCountdown(secondsInput.value, minutesInput.value)
+// }
 
-
-
-function startCountdown() {
-    console.log(`${minutesInput}`)
-    console.log(`${secondsInput}`)
+function startCountdown(seconds, minutes) {
+    var seconds = secondsInput;
+    var minutes = minutesInput;
+    var goal = accomplishInput;
     secondsInput--
     if (secondsInput === 0 && minutesInput > 0) {
         minutesInput--
@@ -127,7 +129,25 @@ function startCountdown() {
     }
     if (secondsInput !== 0 && minutesInput > -1) {
         setTimeout(() => {
-            beginTimer(secondsInput, minutesInput)
+            startCountdown(secondsInput, minutesInput)
         }, 1000);
+    }
+    siteLeft.innerHTML = `<h2 class="new-activity">Current Activity</h2>
+    <section class="site-left-box">
+    <p class="start-timer-goal">${goal} </p>
+    <p class="start-timer-counter">${minutes}:${seconds} </p>
+    <div class="start-timer-section">
+    <button class="start-timer-button">START</button>
+    </div>
+    </section>
+`
+    startTimer = document.querySelector('.start-timer-button');
+    if (categoryValue === "Study") {
+        startTimer.classList.toggle('study-timer-button')
+    }
+    if (categoryValue === "Meditate") {
+        startTimer.classList.toggle('meditate-timer-button')
+    } else if (categoryValue === "Exercise") {
+        startTimer.classList.toggle('exercise-timer-button')
     }
 }
