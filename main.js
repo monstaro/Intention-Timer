@@ -14,16 +14,12 @@ var categoryError = document.querySelector('.category-error');
 var numbers = /^[0-9]+$/;
 
 startButton.addEventListener('click', displayError);
-// minutesInput.addEventListener('input', checkNumMin);
-// secondsInput.addEventListener('input', checkNumSec);
-
 
 studyButton.addEventListener('click', function() {
     studyButton.classList.toggle('study-button-active');
     meditateButton.classList.remove('meditate-button-active');
     exerciseButton.classList.remove('exercise-button-active');
     categoryValue = studyButton.value;
-    console.log('hey')
 
 })
 
@@ -119,17 +115,16 @@ function displayActivity() {
     })
 }
 
-// function starttCountdown() {
-//     startCountdown(secondsInput.value, minutesInput.value)
-// }
-
 
 function startCountdown(secondsInputValue, minutesInputValue) {
   var timer = document.querySelector('.start-timer-counter')
     secondsInputValue--
-    if (secondsInputValue === -1 && minutesInputValue > 0) {
+    if (secondsInputValue === -1 && parseInt(minutesInputValue) > 0) {
         minutesInputValue--
         secondsInputValue = 59
+    }
+    if (secondsInputValue === -1 && parseInt(minutesInputValue) === 0) {
+      return
     }
     var minutesInputNumber = minutesInputValue
     var secondsInputNumber = secondsInputValue
@@ -140,13 +135,9 @@ function startCountdown(secondsInputValue, minutesInputValue) {
       secondsInputNumber = `0${secondsInputValue}`
     }
     timer.innerText = `${minutesInputNumber}:${secondsInputNumber}`
-    if (secondsInputValue === 0 && minutesInputValue === 0) {
-        return
-    }
     if (secondsInputValue > -1 && minutesInputValue > -1) {
-        setTimeout(function() {
-            startCountdown(secondsInputValue, minutesInputValue)
-        }, 1000);
+      setTimeout(function() {
+          startCountdown(secondsInputValue, minutesInputValue)
+      }, 100);
     }
 }
-
