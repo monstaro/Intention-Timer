@@ -75,8 +75,24 @@ function displayError() {
     }
 }
 
+function checkSeconds(seconds) {
+  if (seconds < 60) {
+    return seconds;
+  }   else {
+    return seconds % 60
+  }
+}
+function checkMinutes(minutes, seconds) {
+  if (seconds > 59) {
+    return parseInt(minutes) + parseInt(Math.floor(seconds/60));
+  }  else {
+    return minutes
+  }
+}
+
+
 function displayActivity() {
-    var secondsInputValue = secondsInput.value;
+var secondsInputValue = secondsInput.value;
     var minutesInputValue = minutesInput.value;
     var secondsInputDisplay = secondsInputValue;
     var minutesInputDisplay = minutesInputValue;
@@ -151,9 +167,9 @@ function startCountdown(secondsInputValue, minutesInputValue) {
     }
     timer.innerText = `${minutesInputNumber}:${secondsInputNumber}`
     if (secondsInputValue > -1 && minutesInputValue > -1) {
-        setTimeout(function() {
-            startCountdown(secondsInputValue, minutesInputValue)
-        }, 1000);
+      setTimeout(function() {
+          startCountdown(secondsInputValue, minutesInputValue)
+      }, 100);
     }
 }
 
@@ -196,4 +212,10 @@ function logActivity(event) {
         <p class="past-activity-description">${accomplishInput}</p>
     </div>`
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+
+>>>>>>> e02ca5221a0177b16fc3f27f5167e65df9241051
