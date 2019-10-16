@@ -161,17 +161,42 @@ function startCountdown(secondsInputValue, minutesInputValue) {
 siteLeft.addEventListener('click', logActivity)
 
 function logActivity(event) {
-    var siteRight = document.querySelector('.site-right-main')
-    if (event.target.classList.contains('log-activity-button')) {
-        siteRight.innerHTML = "";
-        siteRight.innerHTML += `<h2 class="past-activities">Past Activities</h2>
+    var noLog = document.querySelector('.site-right-activities');
+    var newCard = document.querySelector('.new-cards')
+    if (event.target.classList.contains('log-activity-button') && categoryValue === 'Meditate') {
+        noLog.innerHTML = ""
+        newCard.innerHTML += `
         <div class="past-activity-box">
         <div class="activity-box-top">
             <p class="past-activity-name">${categoryValue}</p>
-            <div class="color-tab"> . </div>
+            <div class="color-tab-meditate"> . </div>
         </div>
         <p class="past-activity-time">${minutesInput} Minutes ${secondsInput} Seconds</p>
-        <p class="past-activity-description"></p>
+        <p class="past-activity-description">${accomplishInput}</p>
+    </div>`
+    }
+    if (event.target.classList.contains('log-activity-button') && categoryValue === 'Study') {
+        noLog.innerHTML = ""
+        newCard.innerHTML += `
+        <div class="past-activity-box">
+        <div class="activity-box-top">
+            <p class="past-activity-name">${categoryValue}</p>
+            <div class="color-tab-study"> . </div>
+        </div>
+        <p class="past-activity-time">${minutesInput} Minutes ${secondsInput} Seconds</p>
+        <p class="past-activity-description">${accomplishInput}</p>
+    </div>`
+    }
+    if (event.target.classList.contains('log-activity-button') && categoryValue === 'Exercise') {
+        noLog.innerHTML = ""
+        newCard.innerHTML += `
+        <div class="past-activity-box">
+        <div class="activity-box-top">
+            <p class="past-activity-name">${categoryValue}</p>
+            <div class="color-tab-exercise"> . </div>
+        </div>
+        <p class="past-activity-time">${minutesInput} Minutes ${secondsInput} Seconds</p>
+        <p class="past-activity-description">${accomplishInput}</p>
     </div>`
     }
 }
