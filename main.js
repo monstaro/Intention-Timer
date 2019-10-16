@@ -17,14 +17,12 @@ startButton.addEventListener('click', displayError);
 // minutesInput.addEventListener('input', checkNumMin);
 // secondsInput.addEventListener('input', checkNumSec);
 
-
 studyButton.addEventListener('click', function() {
     studyButton.classList.toggle('study-button-active');
     meditateButton.classList.remove('meditate-button-active');
     exerciseButton.classList.remove('exercise-button-active');
     categoryValue = studyButton.value;
     console.log('hey')
-
 })
 
 meditateButton.addEventListener('click', function() {
@@ -40,7 +38,6 @@ exerciseButton.addEventListener('click', function() {
     studyButton.classList.remove('study-button-active');
     categoryValue = exerciseButton.value;
 })
-
 
 function displayError() {
     var activityInputValue = activityInput.value;
@@ -87,10 +84,10 @@ function displayActivity() {
     var minutesInputDisplay = minutesInputValue;
     var activityInputValue = activityInput.value;
     if (secondsInputValue.toString().length === 1) {
-      secondsInputDisplay = `0${secondsInputValue}`
+        secondsInputDisplay = `0${secondsInputValue}`
     }
     if (minutesInputValue.toString().length === 1) {
-      minutesInputDisplay = `0${minutesInputValue}`
+        minutesInputDisplay = `0${minutesInputValue}`
     }
 
     secondsInput = document.querySelector('.seconds-input').value;
@@ -115,7 +112,7 @@ function displayActivity() {
         startTimer.classList.toggle('exercise-timer-button')
     }
     startTimer.addEventListener('click', function() {
-      startCountdown(secondsInputValue, minutesInputValue);
+        startCountdown(secondsInputValue, minutesInputValue);
     })
 }
 
@@ -125,7 +122,7 @@ function displayActivity() {
 
 
 function startCountdown(secondsInputValue, minutesInputValue) {
-  var timer = document.querySelector('.start-timer-counter')
+    var timer = document.querySelector('.start-timer-counter')
     secondsInputValue--
     if (secondsInputValue === -1 && minutesInputValue > 0) {
         minutesInputValue--
@@ -134,19 +131,18 @@ function startCountdown(secondsInputValue, minutesInputValue) {
     var minutesInputNumber = minutesInputValue
     var secondsInputNumber = secondsInputValue
     if (minutesInputValue.toString().length === 1) {
-      minutesInputNumber = `0${minutesInputValue}`
+        minutesInputNumber = `0${minutesInputValue}`
     }
     if (secondsInputValue.toString().length === 1) {
-      secondsInputNumber = `0${secondsInputValue}`
+        secondsInputNumber = `0${secondsInputValue}`
     }
     timer.innerText = `${minutesInputNumber}:${secondsInputNumber}`
-    if (secondsInputValue === 0 && minutesInputValue === 0) {
-        return
-    }
-    if (secondsInputValue > -1 && minutesInputValue > -1) {
+    if (secondsInputValue >= 1 && minutesInputValue > -1) {
         setTimeout(function() {
             startCountdown(secondsInputValue, minutesInputValue)
         }, 1000);
     }
+    if (secondsInputValue === 0 && minutesInputValue === 0) {
+        return
+    }
 }
-
