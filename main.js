@@ -34,6 +34,7 @@ exerciseButton.addEventListener('click', function() {
     categoryValue = exerciseButton.value;
 })
 
+
 startButton.addEventListener('click', displayError);
 
 function displayError() {
@@ -90,24 +91,17 @@ function checkMinutes(minutes, seconds) {
 }
 
 function displayActivity() {
-    var seconds = secondsInput.value;
-    var minutes = minutesInput.value;
-    var secondsInputDisplay = seconds;
-    var minutesInputDisplay = minutes;
+var secondsInputValue = secondsInput.value;
+    var minutesInputValue = minutesInput.value;
+    var secondsInputDisplay = secondsInputValue;
+    var minutesInputDisplay = minutesInputValue;
     var activityInputValue = activityInput.value;
-    var secondsInputValue = checkSeconds(seconds);
-    var minutesInputValue = checkMinutes(minutes, seconds);
     if (secondsInputValue.toString().length === 1) {
-      secondsInputDisplay = `0${secondsInputValue}`
-    } else {
-      secondsInputDisplay = secondsInputValue
+        secondsInputDisplay = `0${secondsInputValue}`
     }
     if (minutesInputValue.toString().length === 1) {
-      minutesInputDisplay = `0${minutesInputValue}`
-    } else {
-      minutesInputDisplay = minutesInputValue
+        minutesInputDisplay = `0${minutesInputValue}`
     }
-
     secondsInput = document.querySelector('.seconds-input').value;
     minutesInput = document.querySelector('.minutes-input').value;
     accomplishInput = document.querySelector('.activity-input').value;
@@ -131,27 +125,45 @@ function displayActivity() {
     }
 
     startTimer.addEventListener('click', function() {
-      startCountdown(secondsInputValue, minutesInputValue);
+        startCountdown(secondsInputValue, minutesInputValue);
     })
 }
 
 function startCountdown(secondsInputValue, minutesInputValue) {
-  var timer = document.querySelector('.start-timer-counter')
+    var timer = document.querySelector('.start-timer-counter')
     secondsInputValue--
     if (secondsInputValue === -1 && parseInt(minutesInputValue) > 0) {
         minutesInputValue--
         secondsInputValue = 59
     }
     if (secondsInputValue === -1 && parseInt(minutesInputValue) === 0) {
-      return
+        siteLeft.innerHTML = `<h2 class="new-activity">Current Activity</h2>
+        <section class="site-left-box">
+        <p class="start-timer-goal">Ayye</p>
+        <p class="start-timer-counter">You did it!</p>
+        <div class="activity-complete-section">
+        <button class="start-timer-button">Congrats</button>
+        <button class="log-activity-button">Log Activity</button>
+        </div>
+        </section>
+    `
+        var startTimer = document.querySelector('.start-timer-button');
+        if (categoryValue === "Study") {
+            startTimer.classList.toggle('study-timer-button')
+        }
+        if (categoryValue === "Meditate") {
+            startTimer.classList.toggle('meditate-timer-button')
+        } else if (categoryValue === "Exercise") {
+            startTimer.classList.toggle('exercise-timer-button')
+        }
     }
     var minutesInputNumber = minutesInputValue
     var secondsInputNumber = secondsInputValue
     if (minutesInputValue.toString().length === 1) {
-      minutesInputNumber = `0${minutesInputValue}`
+        minutesInputNumber = `0${minutesInputValue}`
     }
     if (secondsInputValue.toString().length === 1) {
-      secondsInputNumber = `0${secondsInputValue}`
+        secondsInputNumber = `0${secondsInputValue}`
     }
     timer.innerText = `${minutesInputNumber}:${secondsInputNumber}`
     if (secondsInputValue > -1 && minutesInputValue > -1) {
@@ -160,3 +172,50 @@ function startCountdown(secondsInputValue, minutesInputValue) {
       }, 1000);
     }
 }
+
+
+
+siteLeft.addEventListener('click', logActivity)
+
+function logActivity(event) {
+    var noLog = document.querySelector('.site-right-activities');
+    var newCard = document.querySelector('.new-cards')
+    if (event.target.classList.contains('log-activity-button') && categoryValue === 'Meditate') {
+        noLog.innerHTML = ""
+        newCard.innerHTML += `
+        <div class="past-activity-box">
+        <div class="activity-box-top">
+            <p class="past-activity-name">${categoryValue}</p>
+            <div class="color-tab-meditate"> . </div>
+        </div>
+        <p class="past-activity-time">${minutesInput} Minutes ${secondsInput} Seconds</p>
+        <p class="past-activity-description">${accomplishInput}</p>
+    </div>`
+    }
+    if (event.target.classList.contains('log-activity-button') && categoryValue === 'Study') {
+        noLog.innerHTML = ""
+        newCard.innerHTML += `
+        <div class="past-activity-box">
+        <div class="activity-box-top">
+            <p class="past-activity-name">${categoryValue}</p>
+            <div class="color-tab-study"> . </div>
+        </div>
+        <p class="past-activity-time">${minutesInput} Minutes ${secondsInput} Seconds</p>
+        <p class="past-activity-description">${accomplishInput}</p>
+    </div>`
+    }
+    if (event.target.classList.contains('log-activity-button') && categoryValue === 'Exercise') {
+        noLog.innerHTML = ""
+        newCard.innerHTML += `
+        <div class="past-activity-box">
+        <div class="activity-box-top">
+            <p class="past-activity-name">${categoryValue}</p>
+            <div class="color-tab-exercise"> . </div>
+        </div>
+        <p class="past-activity-time">${minutesInput} Minutes ${secondsInput} Seconds</p>
+        <p class="past-activity-description">${accomplishInput}</p>
+    </div>`
+    }
+}
+
+
