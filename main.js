@@ -162,13 +162,15 @@ siteLeft.addEventListener('click', logActivity)
 function logActivity(event) {
     var siteRight = document.querySelector('.site-right-main')
     if (event.target.classList.contains('log-activity-button')) {
-        siteRight.innerHTML = `<div class="past-activity-box">
+        siteRight.innerHTML = "";
+        siteRight.innerHTML += `<h2 class="past-activities">Past Activities</h2>
+        <div class="past-activity-box">
         <div class="activity-box-top">
-            <p class="past-activity-name">${activityInput}</p>
+            <p class="past-activity-name">${categoryValue}</p>
             <div class="color-tab"> . </div>
         </div>
-        <p class="past-activity-time">${minutesInput} ${secondsInput}</p>
-        <p class="past-activity-description">Who the hell studies for just 15 mins?</p>
+        <p class="past-activity-time">${minutesInput} Minutes ${secondsInput} Seconds</p>
+        <p class="past-activity-description">${activityInputValue}</p>
     </div>`
     }
 }
