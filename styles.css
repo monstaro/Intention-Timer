@@ -185,6 +185,16 @@ header {
     float: right;
 }
 
+.log-activity-button {
+    background-color: #EEEEEE;
+    color: #46424D;
+    font-size: 1em;
+    padding: 8px 30px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: block;
+}
+
 .site-right-main {
     background-color: #2B2733;
     width: 29.9%;
@@ -238,6 +248,11 @@ input[type="button"]:hover {
 
 .start-timer-section {
     display: flex;
+}
+
+.activity-complete-section {
+    display: flex;
+    flex-direction: column;
 }
 
 .start-timer-button {

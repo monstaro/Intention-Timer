@@ -14,15 +14,12 @@ var categoryError = document.querySelector('.category-error');
 var numbers = /^[0-9]+$/;
 
 startButton.addEventListener('click', displayError);
-// minutesInput.addEventListener('input', checkNumMin);
-// secondsInput.addEventListener('input', checkNumSec);
 
 studyButton.addEventListener('click', function() {
     studyButton.classList.toggle('study-button-active');
     meditateButton.classList.remove('meditate-button-active');
     exerciseButton.classList.remove('exercise-button-active');
     categoryValue = studyButton.value;
-    console.log('hey')
 })
 
 meditateButton.addEventListener('click', function() {
@@ -89,7 +86,6 @@ function displayActivity() {
     if (minutesInputValue.toString().length === 1) {
         minutesInputDisplay = `0${minutesInputValue}`
     }
-
     secondsInput = document.querySelector('.seconds-input').value;
     minutesInput = document.querySelector('.minutes-input').value;
     accomplishInput = document.querySelector('.activity-input').value;
@@ -116,9 +112,6 @@ function displayActivity() {
     })
 }
 
-// function starttCountdown() {
-//     startCountdown(secondsInput.value, minutesInput.value)
-// }
 
 
 function startCountdown(secondsInputValue, minutesInputValue) {
@@ -141,8 +134,41 @@ function startCountdown(secondsInputValue, minutesInputValue) {
         setTimeout(function() {
             startCountdown(secondsInputValue, minutesInputValue)
         }, 1000);
+    } else {
+        siteLeft.innerHTML = `<h2 class="new-activity">Current Activity</h2>
+    <section class="site-left-box">
+    <p class="start-timer-goal">Ayye</p>
+    <p class="start-timer-counter">You did it!</p>
+    <div class="activity-complete-section">
+    <button class="start-timer-button">Congrats</button>
+    <button class="log-activity-button">Log Activity</button>
+    </div>
+    </section>
+`
+        var startTimer = document.querySelector('.start-timer-button');
+        if (categoryValue === "Study") {
+            startTimer.classList.toggle('study-timer-button')
+        }
+        if (categoryValue === "Meditate") {
+            startTimer.classList.toggle('meditate-timer-button')
+        } else if (categoryValue === "Exercise") {
+            startTimer.classList.toggle('exercise-timer-button')
+        }
     }
-    if (secondsInputValue === 0 && minutesInputValue === 0) {
-        return
+}
+
+siteLeft.addEventListener('click', logActivity)
+
+function logActivity(event) {
+    var siteRight = document.querySelector('.site-right-main')
+    if (event.target.classList.contains('log-activity-button')) {
+        siteRight.innerHTML = `<div class="past-activity-box">
+        <div class="activity-box-top">
+            <p class="past-activity-name">${activityInput}</p>
+            <div class="color-tab"> . </div>
+        </div>
+        <p class="past-activity-time">${minutesInput} ${secondsInput}</p>
+        <p class="past-activity-description">Who the hell studies for just 15 mins?</p>
+    </div>`
     }
 }
