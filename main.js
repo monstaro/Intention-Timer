@@ -76,17 +76,39 @@ function displayError() {
     }
 }
 
+function checkSeconds(seconds) {
+  if (seconds < 60) {
+    return seconds;
+  }   else {
+    return seconds % 60
+  }
+}
+function checkMinutes(minutes, seconds) {
+  if (seconds > 59) {
+    return parseInt(minutes) + parseInt(Math.floor(seconds/60));
+  }  else {
+    return minutes
+  }
+}
+
+
 function displayActivity() {
-    var secondsInputValue = secondsInput.value;
-    var minutesInputValue = minutesInput.value;
-    var secondsInputDisplay = secondsInputValue;
-    var minutesInputDisplay = minutesInputValue;
+    var seconds = secondsInput.value;
+    var minutes = minutesInput.value;
+    var secondsInputDisplay = seconds;
+    var minutesInputDisplay = minutes;
     var activityInputValue = activityInput.value;
+    var secondsInputValue = checkSeconds(seconds);
+    var minutesInputValue = checkMinutes(minutes, seconds);
     if (secondsInputValue.toString().length === 1) {
       secondsInputDisplay = `0${secondsInputValue}`
+    } else {
+      secondsInputDisplay = secondsInputValue
     }
     if (minutesInputValue.toString().length === 1) {
       minutesInputDisplay = `0${minutesInputValue}`
+    } else {
+      minutesInputDisplay = minutesInputValue
     }
 
     secondsInput = document.querySelector('.seconds-input').value;
@@ -110,6 +132,8 @@ function displayActivity() {
     } else if (categoryValue === "Exercise") {
         startTimer.classList.toggle('exercise-timer-button')
     }
+    console.log(secondsInputValue)
+
     startTimer.addEventListener('click', function() {
       startCountdown(secondsInputValue, minutesInputValue);
     })
