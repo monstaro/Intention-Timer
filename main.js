@@ -14,6 +14,7 @@ var categoryError = document.querySelector('.category-error');
 var numbers = /^[0-9]+$/;
 
 startButton.addEventListener('click', displayError);
+siteLeft.addEventListener('click', logActivity)
 
 studyButton.addEventListener('click', function() {
     studyButton.classList.toggle('study-button-active');
@@ -156,10 +157,6 @@ function startCountdown(secondsInputValue, minutesInputValue) {
     }
 }
 
-
-
-siteLeft.addEventListener('click', logActivity)
-
 function logActivity(event) {
     var noLog = document.querySelector('.site-right-activities');
     var newCard = document.querySelector('.new-cards')
@@ -200,66 +197,3 @@ function logActivity(event) {
     </div>`
     }
 }
-
-
-
-// function startCountdown(secondsInputValue, minutesInputValue) {
-//     var timer = document.querySelector('.start-timer-counter')
-//     secondsInputValue--
-//     if (secondsInputValue === -1 && minutesInputValue > 0) {
-//         minutesInputValue--
-//         secondsInputValue = 59
-//     }
-//     var minutesInputNumber = minutesInputValue
-//     var secondsInputNumber = secondsInputValue
-//     if (minutesInputValue.toString().length === 1) {
-//         minutesInputNumber = `0${minutesInputValue}`
-//     }
-//     if (secondsInputValue.toString().length === 1) {
-//         secondsInputNumber = `0${secondsInputValue}`
-//     }
-//     timer.innerText = `${minutesInputNumber}:${secondsInputNumber}`
-//     if (secondsInputValue >= 1 && minutesInputValue > -1) {
-//         setTimeout(function() {
-//             startCountdown(secondsInputValue, minutesInputValue)
-//         }, 1000);
-//     } else {
-//         siteLeft.innerHTML = `<h2 class="new-activity">Current Activity</h2>
-//     <section class="site-left-box">
-//     <p class="start-timer-goal">Ayye</p>
-//     <p class="start-timer-counter">You did it!</p>
-//     <div class="activity-complete-section">
-//     <button class="start-timer-button">Congrats</button>
-//     <button class="log-activity-button">Log Activity</button>
-//     </div>
-//     </section>
-// `
-//         var startTimer = document.querySelector('.start-timer-button');
-//         if (categoryValue === "Study") {
-//             startTimer.classList.toggle('study-timer-button')
-//         }
-//         if (categoryValue === "Meditate") {
-//             startTimer.classList.toggle('meditate-timer-button')
-//         } else if (categoryValue === "Exercise") {
-//             startTimer.classList.toggle('exercise-timer-button')
-//         }
-//     }
-// }
-
-// siteLeft.addEventListener('click', logActivity)
-
-// function logActivity(event) {
-//     var siteRight = document.querySelector('.site-right-main')
-//     if (event.target.classList.contains('log-activity-button')) {
-//         siteRight.innerHTML = "";
-//         siteRight.innerHTML += `<h2 class="past-activities">Past Activities</h2>
-//         <div class="past-activity-box">
-//         <div class="activity-box-top">
-//             <p class="past-activity-name">${categoryValue}</p>
-//             <div class="color-tab"> . </div>
-//         </div>
-//         <p class="past-activity-time">${minutesInput} Minutes ${secondsInput} Seconds</p>
-//         <p class="past-activity-description">${activityInputValue}</p>
-//     </div>`
-//     }
-// }
