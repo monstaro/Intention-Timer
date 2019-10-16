@@ -4,56 +4,63 @@
 
 html,
 body {
-    height: 100%;
-    margin: 0;
+  height: 100%;
+  margin: 0;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-    background-color: #2B2733;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  background-color: #2B2733;
 }
 
 header {
-    background-color: #46424D;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    text-transform: uppercase;
+  background-color: #46424D;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .header-title {
-    margin: 0;
+  margin: 0;
+  font-weight: normal;
+  font-size: 2em;
 }
 
 .full-content {
-    display: flex;
-    background-color: #2B2733;
-    /* height: calc(100% - 59px); */
+  display: flex;
+  background-color: #2B2733;
+  /* height: calc(100% - 59px); */
 }
 
 .site-left-main {
-    background-color: #2B2733;
-    border-right: 1px solid grey;
-    color: white;
-    width: 70%;
+  background-color: #2B2733;
+  border-right: 1px solid grey;
+  color: white;
+  width: 70%;
 }
 
 .new-activity {
-    margin-left: 20px;
-    font-weight: 300;
+  margin-left: 20px;
+  font-weight: 300;
 }
 
 .site-left-box {
-    background-color: #46424D;
-    margin: 20px;
-    padding: 40px 100px 70px 100px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 10px -5px #000000;
+  background-color: #46424D;
+  margin: 20px;
+  padding: 40px 100px 70px 100px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px -5px #000000;
 }
 
 .site-left-form {
-    background-color: #46424D;
+  background-color: #46424D;
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
 .study-button,
@@ -62,127 +69,109 @@ header {
 .meditate-button-active,
 .exercise-button,
 .exercise-button-active {
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 20%;
-    background-position-y: 0.4em;
-    height: 4em;
-    width: 10em;
-    color: white;
-    background-color: #46424D;
-    padding: 20px;
-    border: white 2px solid;
-    border-radius: 2px;
-    font-size: 1.1em;
-    line-height: 4em;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 20%;
+  background-position-y: 0.4em;
+  height: 4em;
+  width: 10em;
+  color: white;
+  background-color: #46424D;
+  padding: 20px;
+  border: white 2px solid;
+  border-radius: 2px;
+  font-size: 1.1em;
+  line-height: 4em;
 }
 
 .study-button {
-    background-image: url(assets/study.svg);
+  background-image: url(assets/study.svg);
 }
 
 .study-button-active {
-    background-image: url(assets/study-active.svg);
-    color: #B3FD78;
-    border: #B3FD78 2px solid;
+  background-image: url(assets/study-active.svg);
+  color: #B3FD78;
+  border: #B3FD78 2px solid;
 }
 
 .meditate-button {
-    background-image: url(assets/meditate.svg);
+  background-image: url(assets/meditate.svg);
 }
 
 .meditate-button-active {
-    background-image: url(assets/meditate-active.svg);
-    color: #C278FD;
-    border: #C278FD 2px solid;
+  background-image: url(assets/meditate-active.svg);
+  color: #C278FD;
+  border: #C278FD 2px solid;
 }
 
 .exercise-button {
-    background-image: url(assets/exercise.svg);
+  background-image: url(assets/exercise.svg);
 }
 
 .exercise-button-active {
-    background-image: url(assets/exercise-active.svg);
-    color: #FD8087;
-    border: #FD8087 2px solid;
-}
-
-.category-buttons {
-    display: flex;
-    justify-content: space-between;
+  background-image: url(assets/exercise-active.svg);
+  color: #FD8087;
+  border: #FD8087 2px solid;
 }
 
 .category-error {
-    padding-bottom: 3em;
-    text-align: center;
-}
-
-.minutes-seconds-row {
-    display: flex;
-    justify-content: space-between;
+  padding-bottom: 3em;
+  text-align: center;
 }
 
 .activity-input,
 .minutes-input,
 .seconds-input {
-    display: block;
-    background-color: #46424D;
-    border: none;
-    border-bottom: white 1px solid;
-    width: 100%;
-    margin-bottom: 0.5em;
-    font-size: 2em;
-    color: white;
-    padding-left: 5px;
-    padding-top: 5px;
+  display: block;
+  background-color: #46424D;
+  border: none;
+  border-bottom: white 1px solid;
+  width: 100%;
+  margin-bottom: 0.5em;
+  font-size: 2em;
+  color: white;
+  padding-left: 5px;
+  padding-top: 5px;
 }
 
-.question-error-active {
-    border-bottom: #EFB7EC 1px solid;
+.minutes-seconds-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.seconds-column {
+  margin-left: 5em;
 }
 
 .category-error,
 .activity-error,
 .minutes-error,
 .seconds-error {
-    margin-bottom: 2em;
-    color: #EFB7EC;
-    visibility: hidden;
+  margin-bottom: 2em;
+  color: #EFB7EC;
+  visibility: hidden;
 }
 
-.activity-error-active {
-    visibility: visible;
-}
-
-.category-error-active {
-    visibility: visible;
-}
-
-.minutes-error-active {
-    visibility: visible;
-}
-
+.category-error-active,
+.activity-error-active,
+.minutes-error-active,
 .seconds-error-active {
-    visibility: visible;
+  visibility: visible;
 }
 
 .error-image {
-    height: 15px;
-    width: 15px;
-}
-
-.seconds-column {
-    margin-left: 10em;
+  height: 15px;
+  width: 15px;
 }
 
 .start-activity-button {
-    background-color: #EEEEEE;
-    color: #46424D;
-    font-size: 1em;
-    padding: 8px 30px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    float: right;
+  background-color: #EEEEEE;
+  color: #46424D;
+  font-size: 1em;
+  padding: 8px 30px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  float: right;
 }
 
 .activity-complete-section {
@@ -203,50 +192,51 @@ header {
 }
 
 .site-right-main {
-    background-color: #2B2733;
-    width: 29.9%;
+  background-color: #2B2733;
+  width: 29.9%;
 }
 
 .past-activities {
-    margin: 10px;
+  margin: 10px;
+  font-weight: normal;
 }
 
 .site-right-activities {
-    margin: 10px;
+  margin: 10px;
 }
 
 .past-activity-box {
-    background-color: #46424D;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 10px;
-    box-shadow: 5px 5px 10px -5px #000000;
+  background-color: #46424D;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 10px -5px #000000;
 }
 
 .activity-box-top {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .past-activity-name {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .past-activity-time {
-    text-transform: uppercase;
-    font-weight: 400;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 
 .past-activity-description {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 .color-tab {
-    height: 2em;
-    width: 2%;
-    background: orange;
-    color: orange;
-    border-radius: 10px;
+  height: 2em;
+  width: 2%;
+  background: orange;
+  color: orange;
+  border-radius: 10px;
 }
 
 .color-tab-meditate {
@@ -274,47 +264,127 @@ header {
 }
 
 input[type="button"]:hover {
-    cursor: pointer;
-}
-
-.start-timer-section {
-    display: flex;
-}
-
-.start-timer-button {
-    background-color: #46424D;
-    border: 2px solid;
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    color: #FFFFFF;
-    font-size: 1.5em;
-    font-weight: 300;
-    margin: auto;
-}
-
-.study-timer-button {
-    border: 2px solid #B3FD78;
-}
-
-.exercise-timer-button {
-    border: 2px solid #FD8087;
-}
-
-.meditate-timer-button {
-    border: 2px solid #C278FD;
+  cursor: pointer;
 }
 
 .start-timer-goal {
-    font-size: 1.5em;
-    text-align: center;
-    margin: 0;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0;
 }
 
 .start-timer-counter {
+  text-align: center;
+  font-size: 4em;
+  font-weight: 700;
+  margin: 0;
+  padding-bottom: 40px;
+}
+
+.start-timer-section {
+  display: flex;
+}
+
+.start-timer-button {
+  background-color: #46424D;
+  border: 2px solid;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  color: #FFFFFF;
+  font-size: 1.5em;
+  font-weight: 300;
+  margin: auto;
+}
+
+.study-timer-button {
+  border: 2px solid #B3FD78;
+}
+
+.exercise-timer-button {
+  border: 2px solid #FD8087;
+}
+
+.meditate-timer-button {
+  border: 2px solid #C278FD;
+}
+
+@media screen and (max-width: 1150px) {
+  .full-content {
+    display: block;
+  }
+
+  .site-left-main {
+    border-right: 0;
+    border-bottom: 1px solid grey;
+    width: 100%;
+    display: block;
+  }
+
+  .site-right-main {
+    width: 100%;
+    display: block;
+  }
+
+}
+
+@media screen and (max-width: 775px) {
+  .site-left-box {
+    padding: 40px 70px 75px;
+  }
+
+  .category-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .study-button,
+  .study-button-active,
+  .meditate-button,
+  .meditate-button-active,
+  .exercise-button,
+  .exercise-button-active {
+    width: 80%;
+    height: 70px;
+    margin: 7px;
+    font-size: 1.5em;
+    background-size: 13%;
+    line-height: normal;
+    /* NEED TO FIX FORMATTING!!! */
+  }
+
+  .minutes-seconds-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .seconds-column {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  * {
+    font-size: .98em;
+  }
+
+  .header-title {
+    font-size: 1.4em;
+  }
+
+  .site-left-box {
+    padding: 20px 40px 50px;
+  }
+
+  .new-activity,
+  h3 {
+    font-size: 1.2em;
+  }
+
+  .activity-error,
+  .minutes-error,
+  .seconds-error {
     text-align: center;
-    font-size: 4em;
-    font-weight: 700;
-    margin: 0;
-    padding-bottom: 40px;
+  }
 }

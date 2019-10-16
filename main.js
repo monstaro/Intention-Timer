@@ -13,8 +13,6 @@ var secondsError = document.querySelector('.seconds-error');
 var categoryError = document.querySelector('.category-error');
 var numbers = /^[0-9]+$/;
 
-startButton.addEventListener('click', displayError);
-
 studyButton.addEventListener('click', function() {
     studyButton.classList.toggle('study-button-active');
     meditateButton.classList.remove('meditate-button-active');
@@ -36,24 +34,27 @@ exerciseButton.addEventListener('click', function() {
     categoryValue = exerciseButton.value;
 })
 
+
+startButton.addEventListener('click', displayError);
+
 function displayError() {
     var activityInputValue = activityInput.value;
     var minutesInputValue = minutesInput.value;
     var secondsInputValue = secondsInput.value;
     var noError = true;
-    if (activityInputValue === "") {
-        activityError.classList.add('activity-error-active')
-        noError = false;
-    }
-    if (activityInputValue !== "") {
-        activityError.classList.remove('activity-error-active')
-    }
     if (categoryValue === "") {
         categoryError.classList.add('category-error-active')
         noError = false;
     }
     if (categoryValue !== "") {
         categoryError.classList.remove('category-error-active')
+    }
+    if (activityInputValue === "") {
+        activityError.classList.add('activity-error-active')
+        noError = false;
+    }
+    if (activityInputValue !== "") {
+        activityError.classList.remove('activity-error-active')
     }
     if (minutesInputValue === "") {
         minutesError.classList.add('minutes-error-active')
@@ -89,7 +90,6 @@ function checkMinutes(minutes, seconds) {
   }
 }
 
-
 function displayActivity() {
 var secondsInputValue = secondsInput.value;
     var minutesInputValue = minutesInput.value;
@@ -123,6 +123,7 @@ var secondsInputValue = secondsInput.value;
     } else if (categoryValue === "Exercise") {
         startTimer.classList.toggle('exercise-timer-button')
     }
+
     startTimer.addEventListener('click', function() {
         startCountdown(secondsInputValue, minutesInputValue);
     })
@@ -168,7 +169,7 @@ function startCountdown(secondsInputValue, minutesInputValue) {
     if (secondsInputValue > -1 && minutesInputValue > -1) {
       setTimeout(function() {
           startCountdown(secondsInputValue, minutesInputValue)
-      }, 100);
+      }, 1000);
     }
 }
 
