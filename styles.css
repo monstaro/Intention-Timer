@@ -185,6 +185,23 @@ header {
     float: right;
 }
 
+.activity-complete-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.log-activity-button {
+    background-color: #EEEEEE;
+    color: #46424D;
+    font-size: 1em;
+    padding: 8px 30px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: block;
+    width: 50%;
+    margin: 3em auto;
+}
+
 .site-right-main {
     background-color: #2B2733;
     width: 29.9%;
@@ -230,6 +247,30 @@ header {
     background: orange;
     color: orange;
     border-radius: 10px;
+}
+
+.color-tab-meditate {
+    height: 2em;
+    width: 2%;
+    border-radius: 10px;
+    background: #C278FD;
+    color: #C278FD;
+}
+
+.color-tab-study {
+    height: 2em;
+    width: 2%;
+    border-radius: 10px;
+    background: #B3FD78;
+    color: #B3FD78;
+}
+
+.color-tab-exercise {
+    height: 2em;
+    width: 2%;
+    border-radius: 10px;
+    background: #FD8087;
+    color: #FD8087;
 }
 
 input[type="button"]:hover {
