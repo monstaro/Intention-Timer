@@ -2,60 +2,65 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
-    <title>Intention Timer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <title>Intention Timer</title>
 </head>
 
 <body>
 
-    <header>
-        <h1 class="header-title">Intention Timer</h1>
-    </header>
-    <main class="full-content">
-        <section class="site-left-main">
-            <h2 class="new-activity">New Activity</h2>
-            <section class="site-left-box">
-                <h3>Select A Category:</h3>
-                <form class="site-left-form">
-                    <div class="category-buttons">
-                        <input class="study-button" type="button" src="assets/study.svg" value="Study">
-                        <input class="meditate-button" type="button" src="assets/meditate.svg" value="Meditate">
-                        <input class="exercise-button" type="button" src="assets/exercise.svg" value="Exercise">
-                    </div>
-                    <p class="category-error"><img class="error-image" src="assets/warning.svg" /> A category selection is required.</p>
-                    <div class="activity">
-                        <label for="activity-input">What would you like to accomplish during this time?</label>
-                        <input class="activity-input" type="text">
-                        <p class="activity-error"><img class="error-image" src="assets/warning.svg" /> A description is required.</p>
-                    </div>
-                    <div class="minutes-seconds-row">
-                        <div class="minutes-column">
-                            <label for="minutes-input">Minutes</label>
-                            <input class="minutes-input" type="number" onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 190">
-                            <p class="minutes-error"><img class="error-image" src="assets/warning.svg" /> A numeric length is required.</p>
-                        </div>
-                        <div class="seconds-column">
-                            <label for="seconds-input">Seconds</label>
-                            <input class="seconds-input" type="number" onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 190">
-                            <p class="seconds-error"><img class="error-image" src="assets/warning.svg" /> A numeric length is required.</p>
-                        </div>
-                    </div>
-                    <input class="start-activity-button" type="button" value="Start Activity">
-                </form>
-            </section>
-        </section>
-        <section class="site-right-main">
-            <h2 class="past-activities">Past Activities</h2>
-            <p class="site-right-activities">You haven't logged any activities yet. Complete the form to the left to get started!</p>
-            <div class="new-cards"></div>
-        </section>
-    </main>
-
-
+  <header>
+    <h1 class="header-title">Intention Timer</h1>
+  </header>
+  <main class="full-content">
+    <section class="site-left-main">
+      <h2 class="new-activity">New Activity</h2>
+      <section class="site-left-box">
+        <h3>Select A Category:</h3>
+        <form class="site-left-form">
+          <div class="category-buttons">
+            <input class="study-button" type="button" src="assets/study.svg" value="Study">
+            <input class="meditate-button" type="button" src="assets/meditate.svg" value="Meditate">
+            <input class="exercise-button" type="button" src="assets/exercise.svg" value="Exercise">
+          </div>
+            <p class="category-error"><img class="error-image" src="assets/warning.svg" /> A category selection is required.</p>
+            <div class="activity">
+              <label for="activity-input">What would you like to accomplish during this time?</label>
+              <input class="activity-input" type="text">
+              <p class="activity-error"><img class="error-image" src="assets/warning.svg" /> A description is required.</p>
+            </div>
+            <div class="minutes-seconds-row">
+              <div class="minutes-column">
+                <label for="minutes-input">Minutes</label>
+                <input class="minutes-input" type="number" onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 190">
+                <p class="minutes-error"><img class="error-image" src="assets/warning.svg" /> A numeric length is required.</p>
+              </div>
+              <div class="seconds-column">
+                <label for="seconds-input">Seconds</label>
+                <input class="seconds-input" type="number" onkeydown="return event.keyCode !== 69 && event.keyCode !== 189 && event.keyCode !== 190">
+                <p class="seconds-error"><img class="error-image" src="assets/warning.svg" /> A numeric length is required.</p>
+              </div>
+            </div>
+            <input class="start-activity-button" type="button" value="Start Activity">
+        </form>
+      </section>
+    </section>
+    <section class="site-right-main">
+      <h2 class="past-activities">Past Activities</h2>
+      <p class="site-right-activities">You haven't logged any activities yet. Complete the form to the left to get started!</p>
+      <div class="past-activity-box">
+        <div class="activity-box-top">
+          <p class="past-activity-name">Study</p>
+            <div class="color-tab"> . </div>
+        </div>
+          <p class="past-activity-time">15 Mins</p>
+          <p class="past-activity-description">Who the hell studies for just 15 mins?</p>
+        </div>
+    </section>
+  </main>
 </body>
 <script src="main.js"></script>
 
