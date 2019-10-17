@@ -9,9 +9,9 @@ body {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  color: white;
   background-color: #2B2733;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
 header {
@@ -23,14 +23,14 @@ header {
 }
 
 .header-title {
-  margin: 0;
-  font-weight: normal;
   font-size: 2em;
+  font-weight: 400;
+  margin: 0;
 }
 
 .full-content {
-  display: flex;
   background-color: #2B2733;
+  display: flex;
   height: calc(100% - 59px);
 }
 
@@ -42,16 +42,16 @@ header {
 }
 
 .new-activity {
+  font-weight: 400;
   margin-left: 20px;
-  font-weight: 300;
 }
 
 .site-left-box {
   background-color: #46424D;
-  margin: 20px;
-  padding: 40px 100px 70px 100px;
   border-radius: 5px;
   box-shadow: 5px 5px 10px -5px #000000;
+  margin: 20px;
+  padding: 40px 100px 70px 100px;
 }
 
 .site-left-form {
@@ -69,19 +69,19 @@ header {
 .meditate-button-active,
 .exercise-button,
 .exercise-button-active {
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: 20%;
-  background-position-y: 0.4em;
-  height: 4em;
-  width: 10em;
-  color: white;
   background-color: #46424D;
-  padding: 20px;
+  background-position: top;
+  background-position-y: 0.4em;
+  background-repeat: no-repeat;
+  background-size: 20%;
   border: white 2px solid;
   border-radius: 2px;
+  color: white;
   font-size: 1.1em;
+  height: 4em;
   line-height: 4em;
+  padding: 20px;
+  width: 10em;
 }
 
 .study-button {
@@ -90,8 +90,8 @@ header {
 
 .study-button-active {
   background-image: url(assets/study-active.svg);
-  color: #B3FD78;
   border: #B3FD78 2px solid;
+  color: #B3FD78;
 }
 
 .meditate-button {
@@ -100,8 +100,8 @@ header {
 
 .meditate-button-active {
   background-image: url(assets/meditate-active.svg);
-  color: #C278FD;
   border: #C278FD 2px solid;
+  color: #C278FD;
 }
 
 .exercise-button {
@@ -110,8 +110,8 @@ header {
 
 .exercise-button-active {
   background-image: url(assets/exercise-active.svg);
-  color: #FD8087;
   border: #FD8087 2px solid;
+  color: #FD8087;
 }
 
 .category-error {
@@ -122,16 +122,16 @@ header {
 .activity-input,
 .minutes-input,
 .seconds-input {
-  display: block;
   background-color: #46424D;
   border: none;
   border-bottom: white 1px solid;
-  width: 100%;
-  margin-bottom: 0.5em;
-  font-size: 2em;
   color: white;
+  display: block;
+  font-size: 2em;
+  margin-bottom: 0.5em;
   padding-left: 5px;
   padding-top: 5px;
+  width: 100%;
 }
 
 .minutes-seconds-row {
@@ -147,8 +147,8 @@ header {
 .activity-error,
 .minutes-error,
 .seconds-error {
-  margin-bottom: 2em;
   color: #EFB7EC;
+  margin-bottom: 2em;
   visibility: hidden;
 }
 
@@ -166,12 +166,12 @@ header {
 
 .start-activity-button {
   background-color: #EEEEEE;
+  border-radius: 5px;
   color: #46424D;
+  float: right;
   font-size: 1em;
   padding: 8px 30px;
-  border-radius: 5px;
   text-transform: uppercase;
-  float: right;
 }
 
 .activity-complete-section {
@@ -181,14 +181,14 @@ header {
 
 .log-activity-button {
     background-color: #EEEEEE;
-    color: #46424D;
-    font-size: 1em;
-    padding: 8px 30px;
     border-radius: 5px;
-    text-transform: uppercase;
+    color: #46424D;
     display: block;
-    width: 50%;
+    font-size: 1em;
     margin: 3em auto;
+    padding: 8px 30px;
+    text-transform: uppercase;
+    width: 50%;
 }
 
 .site-right-main {
@@ -197,22 +197,22 @@ header {
 }
 
 .past-activities {
+  font-weight: 400;
   margin: 20px;
-  font-weight: normal;
 }
 
 .site-right-activities {
   margin: 10px;
-  text-align: center;
   margin-top: 30px;
+  text-align: center;
 }
 
 .past-activity-box {
   background-color: #46424D;
   border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
   box-shadow: 5px 5px 10px -5px #000000;
+  margin: 20px;
+  padding: 10px;
 }
 
 .activity-box-top {
@@ -225,8 +225,8 @@ header {
 }
 
 .past-activity-time {
-  text-transform: uppercase;
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 .past-activity-description {
@@ -234,35 +234,36 @@ header {
 }
 
 .color-tab {
+  background: orange;
+  border-radius: 10px;
+  color: orange;
   height: 2em;
   width: 2%;
-  background: orange;
-  color: orange;
-  border-radius: 10px;
 }
 
 .color-tab-meditate {
-    height: 2em;
-    width: 2%;
-    border-radius: 10px;
-    background: #C278FD;
-    color: #C278FD;
+  background: #C278FD;
+  border-radius: 10px;
+  color: #C278FD;
+  height: 2em;
+  width: 2%;
+
 }
 
 .color-tab-study {
-    height: 2em;
-    width: 2%;
-    border-radius: 10px;
-    background: #B3FD78;
-    color: #B3FD78;
+  background: #B3FD78;
+  border-radius: 10px;
+  color: #B3FD78;
+  height: 2em;
+  width: 2%;
 }
 
 .color-tab-exercise {
-    height: 2em;
-    width: 2%;
-    border-radius: 10px;
-    background: #FD8087;
-    color: #FD8087;
+  background: #FD8087;
+  border-radius: 10px;
+  color: #FD8087;
+  height: 2em;
+  width: 2%;
 }
 
 input[type="button"]:hover {
@@ -271,16 +272,16 @@ input[type="button"]:hover {
 
 .start-timer-goal {
   font-size: 1.5em;
-  text-align: center;
   margin: 0;
+  text-align: center;
 }
 
 .start-timer-counter {
-  text-align: center;
   font-size: 4em;
   font-weight: 700;
   margin: 0;
   padding-bottom: 40px;
+  text-align: center;
 }
 
 .start-timer-section {
@@ -291,12 +292,13 @@ input[type="button"]:hover {
   background-color: #46424D;
   border: 2px solid;
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
   color: #FFFFFF;
   font-size: 1.5em;
   font-weight: 300;
+  height: 200px;
   margin: auto;
+  width: 200px;
+
 }
 
 .study-timer-button {
@@ -317,15 +319,19 @@ input[type="button"]:hover {
   }
 
   .site-left-main {
-    border-right: 0;
     border-bottom: 1px solid grey;
-    width: 100%;
+    border-right: 0;
     display: block;
+    width: 100%;
   }
 
   .site-right-main {
-    width: 100%;
     display: block;
+    width: 100%;
+  }
+
+  .site-right-activities {
+    margin-bottom: 50px;
   }
 
 }
@@ -336,9 +342,9 @@ input[type="button"]:hover {
   }
 
   .category-buttons {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   .study-button,
@@ -347,13 +353,13 @@ input[type="button"]:hover {
   .meditate-button-active,
   .exercise-button,
   .exercise-button-active {
-    width: 80%;
-    height: 70px;
-    margin: 7px;
+    background-position: 15% 50%;
+    background-size: 2em;
     font-size: 1.5em;
-    background-size: 13%;
+    height: 70px;
     line-height: normal;
-    /* NEED TO FIX FORMATTING!!! */
+    margin: 7px;
+    width: 85%;
   }
 
   .minutes-seconds-row {
@@ -382,6 +388,21 @@ input[type="button"]:hover {
   .new-activity,
   h3 {
     font-size: 1.2em;
+  }
+
+  .study-button,
+  .study-button-active,
+  .meditate-button,
+  .meditate-button-active,
+  .exercise-button,
+  .exercise-button-active {
+    background-position: 5% 50%;
+    background-size: 2em;
+    font-size: 1.5em;
+    height: 70px;
+    line-height: normal;
+    margin: 7px;
+    width: 85%;
   }
 
   .activity-error,
