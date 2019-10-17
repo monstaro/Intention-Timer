@@ -15,7 +15,6 @@ var numbers = /^[0-9]+$/;
 
 siteLeft.addEventListener('click', logActivity)
 
-
 studyButton.addEventListener('click', function() {
     studyButton.classList.toggle('study-button-active');
     meditateButton.classList.remove('meditate-button-active');
@@ -36,7 +35,6 @@ exerciseButton.addEventListener('click', function() {
     studyButton.classList.remove('study-button-active');
     categoryValue = exerciseButton.value;
 })
-
 
 startButton.addEventListener('click', displayError);
 
@@ -95,17 +93,24 @@ function checkMinutes(minutes, seconds) {
 }
 
 function displayActivity() {
-    var secondsInputValue = secondsInput.value;
-    var minutesInputValue = minutesInput.value;
-    var secondsInputDisplay = secondsInputValue;
-    var minutesInputDisplay = minutesInputValue;
+    var seconds = secondsInput.value;
+    var minutes = minutesInput.value;
+    var secondsInputDisplay = seconds;
+    var minutesInputDisplay = minutes;
     var activityInputValue = activityInput.value;
+    var secondsInputValue = checkSeconds(seconds);
+    var minutesInputValue = checkMinutes(minutes, seconds);
     if (secondsInputValue.toString().length === 1) {
         secondsInputDisplay = `0${secondsInputValue}`
+    } else {
+      secondsInputDisplay = secondsInputValue
     }
     if (minutesInputValue.toString().length === 1) {
         minutesInputDisplay = `0${minutesInputValue}`
+    } else {
+      minutesInputDisplay = minutesInputValue
     }
+
     secondsInput = document.querySelector('.seconds-input').value;
     minutesInput = document.querySelector('.minutes-input').value;
     accomplishInput = document.querySelector('.activity-input').value;
